@@ -1,0 +1,13 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+    attributes:
+      user:
+        registry: Matrícula
+        password: Senha
+        status: Situação
+  		status_note: Detalhe da situação
+  		last_login: Data e horário do último login
+  		version_visited: Última visita na versão

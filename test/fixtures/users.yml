@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registry: 12345678
+  password: changeit
+  status: ACTIVE
+
+two:
+  registry: 55687412
+  password: change123
+  status: INACTIVE
+  status_note: Retirement.
