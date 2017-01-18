@@ -3,6 +3,7 @@ class User
 
   field :registry, type: Integer
   field :password, type: String
+  field :salt_number, type: String
   field :status, type: String
   field :status_note, type: String
   field :last_login, type: Time
@@ -10,6 +11,7 @@ class User
 
   validates :registry, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 5, maximum: 20 }
+  validates :salt_number, presence: true
   validates :status, presence: true, inclusion: { in: %w(ACTIVE INACTIVE BLOCKED) }
 
   def ==(obj)

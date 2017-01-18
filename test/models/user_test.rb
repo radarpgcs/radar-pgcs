@@ -25,6 +25,7 @@ class UserTest < ActiveSupport::TestCase
   test 'should validate registry presence' do
     user = User.new do |u|
       u.password = '12345'
+      u.salt_number = '54321'
       u.status = 'ACTIVE'
     end
 
@@ -38,6 +39,7 @@ class UserTest < ActiveSupport::TestCase
   test 'should validate password presence' do
     user = User.new do |u|
       u.registry = '12345'
+      u.salt_number = '54321'
       u.status = 'ACTIVE'
     end
 
@@ -53,6 +55,7 @@ class UserTest < ActiveSupport::TestCase
     user = User.new do |u|
       u.registry = '12345'
       u.password = ('0' * (minimum - 1))
+      u.salt_number = '54321'
       u.status = 'ACTIVE'
     end
 
@@ -68,6 +71,7 @@ class UserTest < ActiveSupport::TestCase
     user = User.new do |u|
       u.registry = '12345'
       u.password = ('0' * (maximum + 1))
+      u.salt_number = '54321'
       u.status = 'ACTIVE'
     end
 
@@ -78,10 +82,25 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "é muito longo (máximo: #{maximum} caracteres)", errors[:password].first
   end
 
+  test 'should validate salt_number presence' do
+    user = User.new do |u|
+      u.registry = '12345'
+      u.password = '12345'
+      u.status = 'ACTIVE'
+    end
+
+    assert user.invalid?
+
+    errors = user.errors.messages
+    assert_equal 1, errors[:salt_number].size
+    assert_equal 'não pode ficar em branco', errors[:salt_number].first
+  end
+
   test 'should validate status presence' do
     user = User.new do |u|
       u.registry = '12345'
       u.password = '12345'
+      u.salt_number = '54321'
     end
 
     assert user.invalid?
@@ -95,6 +114,7 @@ class UserTest < ActiveSupport::TestCase
     user = User.new do |u|
       u.registry = '12345'
       u.password = '12345'
+      u.salt_number = '54321'
       u.status = 'WRONG'
     end
 

@@ -3,10 +3,12 @@
 one:
   registry: 12345678
   password: changeit
+  salt_number: 54321
   status: ACTIVE
 
 two:
   registry: 55687412
   password: change123
+  salt_number: f8c97f
   status: INACTIVE
   status_note: Retirement.
