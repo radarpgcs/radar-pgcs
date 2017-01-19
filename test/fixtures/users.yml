@@ -5,6 +5,9 @@ one:
   password: changeit
   salt_number: 54321
   status: ACTIVE
+  roles:
+    - MEMBER
+    - COLLABORATOR
 
 two:
   registry: 55687412
@@ -12,3 +15,5 @@ two:
   salt_number: f8c97f
   status: INACTIVE
   status_note: Retirement.
+  roles:
+    - MEMBER

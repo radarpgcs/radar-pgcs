@@ -124,4 +124,67 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 1, errors[:status].size
     assert_equal 'não está incluído na lista', errors[:status].first
   end
+
+  test 'should validate roles presence' do
+    user = User.new do |u|
+      u.registry = '12345'
+      u.password = '12345'
+      u.salt_number = '54321'
+      u.status = 'ACTIVE'
+    end
+
+    assert user.invalid?
+
+    errors = user.errors.messages
+    assert_equal 1, errors[:roles].size
+    assert_equal 'não pode ficar em branco', errors[:roles].first
+  end
+
+  test 'should validate roles minimum size' do
+    user = User.new do |u|
+      u.registry = '12345'
+      u.password = '12345'
+      u.salt_number = '54321'
+      u.status = 'ACTIVE'
+      u.roles = []
+    end
+
+    assert user.invalid?
+
+    errors = user.errors.messages
+    assert_equal 1, errors[:roles].size
+    assert_equal 'deve ser uma relação de pelo menos um elemento', errors[:roles].first
+  end
+
+  test 'should validate roles maximum size' do
+    user = User.new do |u|
+      u.registry = '12345'
+      u.password = '12345'
+      u.salt_number = '54321'
+      u.status = 'ACTIVE'
+      u.roles = %w(ADMINISTRATOR COLLABORATOR MEMBER MEMBER)
+    end
+
+    assert user.invalid?
+
+    errors = user.errors.messages
+    assert_equal 1, errors[:roles].size
+    assert_equal 'deve ser uma relação com no máximo 3 elementos', errors[:roles].last
+  end
+
+  test 'should validate roles inclusion' do
+    user = User.new do |u|
+      u.registry = '12345'
+      u.password = '12345'
+      u.salt_number = '54321'
+      u.status = 'ACTIVE'
+      u.roles = %w(ADMINISTRATOR COLLABORATOR WRONG)
+    end
+
+    assert user.invalid?
+
+    errors = user.errors.messages
+    assert_equal 1, errors[:roles].size
+    assert_equal 'esperava encontrar uma lista contendo um destes valores: ADMINISTRATOR COLLABORATOR MEMBER', errors[:roles].last
+  end
 end

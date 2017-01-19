@@ -136,6 +136,9 @@ pt-BR:
         one: não possui o tamanho esperado (1 caracter)
         other: não possui o tamanho esperado (%{count} caracteres)
       other_than: deve ser diferente de %{count}
+      array_not_empty: 'deve ser uma relação de pelo menos um elemento'
+      array_with_max_size: 'deve ser uma relação com no máximo %{max_size} elementos'
+      array_inclusion: 'esperava encontrar uma lista contendo um destes valores: %{expected_values}'
     template:
       body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
