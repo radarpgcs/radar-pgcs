@@ -12,7 +12,7 @@ class User
   field :roles, type: Array
 
   validates :registry, presence: true, uniqueness: true
-  validates :password, presence: true, length: { minimum: 5, maximum: 100 }
+  validates :password, presence: true, length: { minimum: 5, maximum: 20 }
   validates :salt_number, presence: true
   validates :status, presence: true, inclusion: { in: %w(ACTIVE INACTIVE BLOCKED) }
   validate :validate_roles
