@@ -12,8 +12,7 @@ class User
   field :roles, type: Array
 
   validates :registry, presence: true, uniqueness: true
-  validates :password, presence: true, length: { minimum: 5, maximum: 20 }
-  validates :salt_number, presence: true
+  validates :password, presence: true, length: { minimum: 5, maximum: MAX_SIZE_PASSWORD }
   validates :status, presence: true, inclusion: { in: %w(ACTIVE INACTIVE BLOCKED) }
   validate :validate_roles
 
@@ -23,4 +22,6 @@ class User
     
     (self.registry == obj.registry)
   end
+
+  before_save :set_credentials
 end

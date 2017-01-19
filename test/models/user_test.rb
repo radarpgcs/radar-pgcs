@@ -82,20 +82,6 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "é muito longo (máximo: #{maximum} caracteres)", errors[:password].first
   end
 
-  test 'should validate salt_number presence' do
-    user = User.new do |u|
-      u.registry = '12345'
-      u.password = '12345'
-      u.status = 'ACTIVE'
-    end
-
-    assert user.invalid?
-
-    errors = user.errors.messages
-    assert_equal 1, errors[:salt_number].size
-    assert_equal 'não pode ficar em branco', errors[:salt_number].first
-  end
-
   test 'should validate status presence' do
     user = User.new do |u|
       u.registry = '12345'
@@ -186,5 +172,24 @@ class UserTest < ActiveSupport::TestCase
     errors = user.errors.messages
     assert_equal 1, errors[:roles].size
     assert_equal 'esperava encontrar uma lista contendo um destes valores: ADMINISTRATOR COLLABORATOR MEMBER', errors[:roles].last
+  end
+
+  test 'should create a user' do
+    password = '12345'
+    user = User.new do |u|
+      u.registry = '123456'
+      u.password = password
+      u.status = 'ACTIVE'
+      u.roles = %w(ADMINISTRATOR COLLABORATOR MEMBER)
+    end
+
+    user.save
+    assert_not_nil user.id
+    assert_equal 123456, user.registry
+    assert_equal 'ACTIVE', user.status
+    assert_equal %w(ADMINISTRATOR COLLABORATOR MEMBER), user.roles
+
+    password_hash = Services::Security.generate_hash password, user.salt_number
+    assert_equal password_hash, user.password
   end
 end
