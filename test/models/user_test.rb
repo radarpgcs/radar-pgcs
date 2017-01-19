@@ -67,7 +67,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'should validate password maximum size' do
-    maximum = 20
+    maximum = 100
     user = User.new do |u|
       u.registry = '12345'
       u.password = ('0' * (maximum + 1))
