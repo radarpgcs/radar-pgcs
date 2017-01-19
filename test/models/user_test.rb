@@ -174,10 +174,14 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 'esperava encontrar uma lista contendo um destes valores: ADMINISTRATOR COLLABORATOR MEMBER', errors[:roles].last
   end
 
-  test 'should create a user' do
+  test 'should save a user' do
+    registry = 123456
+    user = User.find_by(registry: registry)
+    user.delete if user
     password = '12345'
+
     user = User.new do |u|
-      u.registry = '123456'
+      u.registry = registry
       u.password = password
       u.status = 'ACTIVE'
       u.roles = %w(ADMINISTRATOR COLLABORATOR MEMBER)
@@ -185,11 +189,18 @@ class UserTest < ActiveSupport::TestCase
 
     user.save
     assert_not_nil user.id
-    assert_equal 123456, user.registry
+    assert_equal registry, user.registry
     assert_equal 'ACTIVE', user.status
     assert_equal %w(ADMINISTRATOR COLLABORATOR MEMBER), user.roles
+    assert_not_nil user.salt_number
 
     password_hash = Services::Security.generate_hash password, user.salt_number
     assert_equal password_hash, user.password
+
+    salt_number = user.salt_number.dup
+    user.save
+
+    assert_equal password_hash, user.password
+    assert_equal salt_number, user.salt_number
   end
 end
