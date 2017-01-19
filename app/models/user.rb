@@ -16,12 +16,12 @@ class User
   validates :status, presence: true, inclusion: { in: %w(ACTIVE INACTIVE BLOCKED) }
   validate :validate_roles
 
+  before_save :set_credentials
+
   def ==(obj)
     return false if obj.nil?
     return false unless self.class == obj.class
     
     (self.registry == obj.registry)
   end
-
-  before_save :set_credentials
 end
