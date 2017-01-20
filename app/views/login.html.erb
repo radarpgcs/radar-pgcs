@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title><%= t '.title' %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <style type="text/css">
+.login-box {
+  width:100px;
+  height:100px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-50px;
+  margin-left:-50px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 text-center">
+        <br/><br/>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-8 text-center">
+            <h2>
+              <%= t '.title' %>
+              <%= image_tag 'satellite.png' %>
+            </h2>
+          </div>
+        </div>
+
+        <div class="row login-box">
+          <div class="col-md-3"></div>
+          <div class="col-md-5">
+            <div class="jumbotron">
+              <%= form_tag sign_in_path, method: 'POST' do %>
+                <% flash.each do |key, message| %>
+                  <div id="<%= key %>_message" class="alert alert-<%= key %> alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <b><%= t "alert.title.#{key}" %></b>
+
+                    <p id="p_<%= key %>"><%= message %></p>
+                  </div>
+                <% end %>
+
+                <div class="row">
+                  <div class="col-md-4"><label for="identity"><%= t '.identity' %></label></div>
+                  <div class="col-md-4">
+                    <input type="text" required maxlength="25" id="identity" name="identity" value="<%= params[:identity] %>" autofocus/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label for="password"><%= t '.password' %></label></div>
+                  <div class="col-md-4"><input type="password" required maxlength="20" id="password" name="password" value=""/></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-4"><button type="submit" class="btn btn-info"><%= t '.sign_in' %></button></div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

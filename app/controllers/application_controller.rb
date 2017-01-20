@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
   def index
     render '/index', layout: false
   end
+
+  # GET /login
+  def login
+    render '/login', layout: false
+  end
 end

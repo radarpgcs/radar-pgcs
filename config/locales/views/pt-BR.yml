@@ -5,3 +5,8 @@ pt-BR:
     subtitle: 'Este radar despertará seus "sentidos de aranha".'
     version: Versão
     sign_in: Entrar
+  login:
+    title: Radar PGCS
+    identity: Identificador
+    password: Senha
+    sign_in: Entrar
