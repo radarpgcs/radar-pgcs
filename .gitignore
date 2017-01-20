@@ -20,5 +20,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore git properties specific to Radar user
+# Ignore git properties specific to Radar user.
 init_scm_evn.sh
+
+# Ignore script to change commiter.
+set_correct_commiter.sh
