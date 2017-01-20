@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <title><%= t 'project_name' %></title>
+  <title><%= t '.title' %></title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   
@@ -13,25 +13,29 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 text-center">
+        <br/><br/>
         <div class="jumbotron">
           <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4 text-center">
               <h2>
-                Radar PGCS
+                <%= t '.title' %>
                 <%= image_tag 'satellite.png' %>
               </h2>
-              <h4>Versão ???</h4>
+              <h4><%= t '.version' %> ???</h4>
               <%= image_tag 'radar-spider_man.gif', :width => 200 %>
             </div>
           </div>
 
           <div class="row">
-            <h4>Este radar despertará seus "sentidos de aranha".</h4>
-            <div class="col-md-4">
+            <div class="col-md-12">
+              <h4><%= t '.subtitle' %></h4><br/>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"></div>
             <div class="col-md-4 text-center">
-              <a href="#" class="btn btn-info btn-large btn-block"><b>Entrar</b></a>
+              <a href="#" class="btn btn-info btn-large btn-block"><b><%= t '.sign_in' %></b></a>
             </div>
           </div>
         </div>
