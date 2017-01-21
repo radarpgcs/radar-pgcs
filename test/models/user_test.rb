@@ -176,7 +176,7 @@ class UserTest < ActiveSupport::TestCase
 
   test 'should save a user' do
     registry = 123456
-    user = User.find_by(registry: registry)
+    user = User.where(registry: registry).first
     user.delete if user
     password = '12345'
 
