@@ -1,3 +1,5 @@
+require Rails.root.join 'app', 'services', 'security_service.rb'
+
 module UserConcern
   extend ActiveSupport::Concern
 
