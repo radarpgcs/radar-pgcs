@@ -10,3 +10,6 @@ pt-BR:
     identity: Identificador
     password: Senha
     sign_in: Entrar
+    authentication_failed:
+      title: Autenticação falhou
+      message: Não foi possível autenticar com os dados informados.
