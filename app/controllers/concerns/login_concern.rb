@@ -24,7 +24,7 @@ module LoginConcern
     regex = /\Ahttps?:\/\/(#{request.host}):?(#{request.port})?/
     if (request.referer =~ regex) == 0
       caller_path = request.referer.sub regex, ''
-      ((caller_path != login_path) && (caller_path != signin_path)) ? caller_path : home_path
+      ((caller_path != login_path) && (caller_path != sign_in_path)) ? caller_path : home_path
     else
       home_path
     end
