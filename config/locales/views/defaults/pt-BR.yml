@@ -1,0 +1,8 @@
+---
+pt-BR:
+  alert:
+    title:
+      info: Informação
+      success: Sucesso
+      warning: Atenção
+      danger: Erro
