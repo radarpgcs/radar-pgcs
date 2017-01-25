@@ -18,6 +18,13 @@ module LoginConcern
     session[:user_so] = {
       :registry => user.registry
     }
+
+    Auditing.new do |e|
+      e.user = user
+      e.ip = request.remote_ip
+      e.event = 'LOGIN'
+      e.event_date = Time.now
+    end.save
   end
 
   def caller_url
