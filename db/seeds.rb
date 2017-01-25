@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+raise 'Could not find environment variable ADMIN_ID' if ENV['ADMIN_ID'].nil?
+
+User.new do |u|
+  u.registry = ENV['ADMIN_ID']
+  u.password = 'changeit'
+  u.status = 'INACTIVE'
+  u.roles = %w(ADMINISTRATOR COLLABORATOR MEMBER)
+end.save! unless User.where(registry: ENV['ADMIN_ID']).exists?
