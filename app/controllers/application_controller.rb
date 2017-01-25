@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 
   # GET /
   def index
-    render '/index', layout: false
+    path = logged_in? ? '/home' : '/index'
+    render path, layout: false
   end
 
   # GET /login

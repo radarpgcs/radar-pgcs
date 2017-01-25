@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Company</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+.jumbotron {
+  background-color: #f4511e; /* Orange */
+  color: #ffffff;
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+}
+
+.container-fluid {
+  padding: 60px 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+}
+
+.logo-small {
+  color: #f4511e;
+  font-size: 50px;
+}
+
+.logo {
+  color: #f4511e;
+  font-size: 200px;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #f4511e;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #f4511e !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
+  <nav class="navbar navbar-toggleable-md fixed-top">
+    <a class="navbar-brand" href="#"><%= image_tag 'satellite-dish-64.png' %></a>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <h4><a class="nav-link" href="#">Home</a></h4>
+        </li>
+        <li class="nav-item">
+          <h4><a class="nav-link" href="#">Link</a></h4>
+        </li>
+        <li class="nav-item">
+          <h4><a class="nav-link disabled" href="#">Disabled</a></h4>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <br/><br/>
+  <div class="jumbotron text-center">
+    <h1><%= t '.title' %></h1>
+    <p><%= t '.subtitle' %></p>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2><%= t '.news.title' %></h2>
+        <h4><%= t '.news.subtitle', version: ENV['APP_VERSION'] %></h4>
+        <p>Malabibala</p>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag 'blip.png' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= image_tag 'promotion.png' %>
+      </div>
+      <div class="col-sm-8">
+        <h2><%= t '.promotion.title' %></h2>
+        <h4><%= t '.promotion.subtitle' %></h4>
+        <p>
+          <a href="#"><%= t '.promotion.merit.label' %>:</a>
+          <%= t '.promotion.merit.text' %>
+        </p>
+        <p>
+          <a href="#"><%= t '.promotion.time_service.label' %>:</a>
+          <%= t '.promotion.time_service.text' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

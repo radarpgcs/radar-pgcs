@@ -1,6 +1,10 @@
 module LoginConcern
   extend ActiveSupport::Concern
 
+  def logged_in?
+    !session[:user_so].nil?
+  end
+  
   def authenticate_login(uid, pass)
     user = User.where(registry: uid).first
     if user.nil?

@@ -13,3 +13,18 @@ pt-BR:
     authentication_failed:
       title: Autenticação falhou
       message: Não foi possível autenticar com os dados informados.
+  home:
+    title: Radar PGCS
+    subtitle: 'Este radar despertará seus "sentidos de aranha".'
+    news:
+      title: Notícias
+      subtitle: Notas sobre a versão %{version}
+    promotion:
+      title: Promoções
+      subtitle: Encontre a lista de promovidos por mérito e tempo de serviço (famigerado PDF) de 2009 até o momento.
+      merit:
+        label: Promoção por Mérito
+        text: Relação de promovidos por mérito dos quadros interno e externo desde 2009.
+      time_service:
+        label: Promoção por Tempo de Serviço
+        text: Relação de promovidos por tempo de serviço dos quadros interno e externo desde 2009.
