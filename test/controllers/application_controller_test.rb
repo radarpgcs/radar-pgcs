@@ -28,4 +28,10 @@ class ApplicationControllerTest < ActionController::TestCase
     assert_response 302
     assert_redirected_to home_path
   end
+
+  test 'should sign user out' do
+    delete :sign_out, session: { registry: '00000000000' }
+    assert_response 302
+    assert_redirected_to home_path
+  end
 end

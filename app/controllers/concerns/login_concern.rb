@@ -1,6 +1,11 @@
 module LoginConcern
   extend ActiveSupport::Concern
 
+  def current_user
+    return @current_user if @current_user
+    @current_user = User.find_by registry: session[:user_so]['registry']
+  end
+
   def logged_in?
     !session[:user_so].nil?
   end
@@ -29,6 +34,11 @@ module LoginConcern
       e.event = 'LOGIN'
       e.event_date = Time.now
     end.save
+  end
+
+  def log_out
+    session.delete(:user_so)
+    @current_user = nil
   end
 
   def caller_url
