@@ -1,5 +1,7 @@
 ---
 pt-BR:
+  app_name: Radar PGCS
+  sign_out: Sair
   alert:
     title:
       info: Informação

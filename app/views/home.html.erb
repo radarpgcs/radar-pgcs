@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Theme Company</title>
+  <title><%= t 'app_name' %></title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -67,20 +67,22 @@
   </style>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
   <nav class="navbar navbar-toggleable-md fixed-top">
-    <a class="navbar-brand" href="#"><%= image_tag 'satellite-dish-64.png' %></a>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#home">Home</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <h4><a class="nav-link" href="#">Home</a></h4>
+          <h5><a class="nav-link" href="#news"><%= t '.news.title' %></a></h5>
         </li>
         <li class="nav-item">
-          <h4><a class="nav-link" href="#">Link</a></h4>
+          <h5><a class="nav-link" href="#promotion"><%= t '.promotion.title' %></a></h5>
         </li>
         <li class="nav-item">
-          <h4><a class="nav-link disabled" href="#">Disabled</a></h4>
+          <h5><a class="nav-link" href="#"><%= t 'sign_out' %></a></h5>
         </li>
       </ul>
     </div>
@@ -92,7 +94,7 @@
     <p><%= t '.subtitle' %></p>
   </div>
 
-  <div class="container-fluid">
+  <div id="news" class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
         <h2><%= t '.news.title' %></h2>
@@ -105,7 +107,7 @@
     </div>
   </div>
 
-  <div class="container-fluid bg-grey">
+  <div id="promotion" class="container-fluid bg-grey">
     <div class="row">
       <div class="col-sm-4">
         <%= image_tag 'promotion.png' %>
@@ -124,5 +126,27 @@
       </div>
     </div>
   </div>
+
+  <nav class="navbar navbar-toggleable-md">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <h6><%= link_to 'Home', home_path, class: 'nav-link' %></h6>
+        </li>
+        <li class="nav-item">
+          <h6><%= link_to 'Contact', '', class: 'nav-link' %></h6>
+        </li>
+        <li class="nav-item">
+          <h6><%= link_to 'FAQ', '', class: 'nav-link' %></h6>
+        </li>
+        <li class="nav-item">
+          <h6><%= link_to 'News', '', class: 'nav-link' %></h6>
+        </li>
+        <li class="nav-item">
+          <h6><%= link_to 'Project site', '', class: 'nav-link' %></h6>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </body>
 </html>
