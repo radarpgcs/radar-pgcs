@@ -1,0 +1,9 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      news: Notícia
+    attributes:
+      news:
+        version: Versão do site
+        message: Mensagem
