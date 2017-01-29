@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   # GET /
   def index
+    @news = News.where(version: ENV['APP_VERSION']) if logged_in?
     path = logged_in? ? '/home' : '/index'
     render path, layout: false
   end
@@ -37,5 +38,19 @@ class ApplicationController < ActionController::Base
     log_out
     Rails.logger.info message
     redirect_to home_path
+  end
+
+  # GET /news
+  def news
+    html = '<p align="justify">'
+    html << "<h4>#{I18n.translate 'news.subtitle', version: ENV['APP_VERSION']}</h4>"
+    html << '<ul>'
+
+    News.where(version: ENV['APP_VERSION']).each do |e|
+      html << "<li>#{e.message}</li>"
+    end
+
+    html << '</ul></p>'
+    render html: html.html_safe
   end
 end

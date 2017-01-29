@@ -16,3 +16,11 @@
 //= require_tree .
 //= require tether
 //= require bootstrap
+
+function showModalNews() {
+  var url = location.protocol + '//' + location.host + '/news';
+  
+  $.get(url, function(data) {
+    $("#modalNews").html(data);
+  });
+}

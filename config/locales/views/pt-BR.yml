@@ -16,9 +16,6 @@ pt-BR:
   home:
     title: Radar PGCS
     subtitle: 'Este radar despertará seus "sentidos de aranha".'
-    news:
-      title: Notícias
-      subtitle: Notas sobre a versão %{version}
     promotion:
       title: Promoções
       subtitle: Encontre a lista de promovidos por mérito e tempo de serviço (famigerado PDF) de 2009 até o momento.
