@@ -7,9 +7,12 @@ class ApplicationController < ActionController::Base
 
   # GET /
   def index
-    @news = News.where(version: ENV['APP_VERSION']) if logged_in?
-    path = logged_in? ? '/home' : '/index'
-    render path, layout: false
+    if logged_in?
+      @news = News.where(version: ENV['APP_VERSION'])
+      render '/home'
+    else
+      render '/index', layout: false
+    end
   end
 
   # GET /login

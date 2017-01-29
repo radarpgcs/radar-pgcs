@@ -1,182 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title><%= t 'app_name' %></title>
-  <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-.jumbotron {
-  background-color: #f4511e; /* Orange */
-  color: #ffffff;
-}
-
-.bg-grey {
-  background-color: #f6f6f6;
-}
-
-.container-fluid {
-  padding: 60px 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .col-sm-4 {
-    text-align: center;
-    margin: 25px 0;
-  }
-}
-
-.logo-small {
-  color: #f4511e;
-  font-size: 50px;
-}
-
-.logo {
-  color: #f4511e;
-  font-size: 200px;
-}
-
-.navbar {
-  margin-bottom: 0;
-  background-color: #f4511e;
-  z-index: 9999;
-  border: 0;
-  font-size: 12px !important;
-  line-height: 1.42857143 !important;
-  letter-spacing: 4px;
-  border-radius: 0;
-}
-
-.navbar li a, .navbar .navbar-brand {
-  color: #fff !important;
-}
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-  color: #f4511e !important;
-  background-color: #fff !important;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-  color: #fff !important;
-}
-  </style>
-</head>
-
-<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
-  <nav class="navbar navbar-toggleable-md fixed-top">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#home">Home</a>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <h5><a class="nav-link" href="#news"><%= t 'news.title' %></a></h5>
-        </li>
-        <li class="nav-item">
-          <h5><a class="nav-link" href="#promotion"><%= t '.promotion.title' %></a></h5>
-        </li>
-        <li class="nav-item">
-          <h5><%= link_to t('sign_out'), signout_path, method: :delete, class: 'nav-link' %></h5>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <br/><br/>
-  <div class="jumbotron text-center">
-    <h1><%= t '.title' %></h1>
-    <p><%= t '.subtitle' %></p>
+<nav class="navbar navbar-toggleable-md fixed-top">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#home">Home</a>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <h5><a class="nav-link" href="#news"><%= t 'news.title' %></a></h5>
+      </li>
+      <li class="nav-item">
+        <h5><a class="nav-link" href="#promotion"><%= t '.promotion.title' %></a></h5>
+      </li>
+      <li class="nav-item">
+        <h5><%= link_to t('sign_out'), signout_path, method: :delete, class: 'nav-link' %></h5>
+      </li>
+    </ul>
   </div>
+</nav>
 
-  <div id="news" class="container-fluid">
-    <div class="row">
-      <div class="col-sm-8">
-        <h2><%= t 'news.title' %></h2>
-        <h4><%= t 'news.subtitle', version: ENV['APP_VERSION'] %></h4>
-        <% @news.each do |e| %>
-        * <%= e.message %><br/>
-        <% end %>
-      </div>
-      <div class="col-sm-4">
-        <%= image_tag 'blip.png' %>
-      </div>
+<br/><br/>
+<div class="jumbotron text-center">
+  <h1><%= t '.title' %></h1>
+  <p><%= t '.subtitle' %></p>
+</div>
+
+<div id="news" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2><%= t 'news.title' %></h2>
+      <h4><%= t 'news.subtitle', version: ENV['APP_VERSION'] %></h4>
+      <% @news.each do |e| %>
+      * <%= e.message %><br/>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <%= image_tag 'blip.png' %>
     </div>
   </div>
+</div>
 
-  <div id="promotion" class="container-fluid bg-grey">
-    <div class="row">
-      <div class="col-sm-4">
-        <%= image_tag 'promotion.png' %>
-      </div>
-      <div class="col-sm-8">
-        <h2><%= t '.promotion.title' %></h2>
-        <h4><%= t '.promotion.subtitle' %></h4>
-        <p>
-          <a href="#"><%= t '.promotion.merit.label' %>:</a>
-          <%= t '.promotion.merit.text' %>
-        </p>
-        <p>
-          <a href="#"><%= t '.promotion.time_service.label' %>:</a>
-          <%= t '.promotion.time_service.text' %>
-        </p>
-      </div>
+<div id="promotion" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= image_tag 'promotion.png' %>
+    </div>
+    <div class="col-sm-8">
+      <h2><%= t '.promotion.title' %></h2>
+      <h4><%= t '.promotion.subtitle' %></h4>
+      <p>
+        <a href="#"><%= t '.promotion.merit.label' %>:</a>
+        <%= t '.promotion.merit.text' %>
+      </p>
+      <p>
+        <a href="#"><%= t '.promotion.time_service.label' %>:</a>
+        <%= t '.promotion.time_service.text' %>
+      </p>
     </div>
   </div>
-
-  <nav class="navbar navbar-toggleable-md">
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <h6><%= link_to 'Home', home_path, class: 'nav-link' %></h6>
-        </li>
-        <li class="nav-item">
-          <h6><%= link_to 'Contact', '', class: 'nav-link' %></h6>
-        </li>
-        <li class="nav-item">
-          <h6><%= link_to 'FAQ', '', class: 'nav-link' %></h6>
-        </li>
-        <li class="nav-item">
-          <h6>
-            <a href="javascript: void(0)" data-toggle="modal" data-target="#modalVersionMessage" onclick="showModalNews()" class="nav-link"><%= ENV['APP_VERSION'] %></a>
-          </h6>
-        </li>
-        <li class="nav-item">
-          <h6><%= link_to t('project_site'), ENV['PROJECT_SOURCE_URL'], class: 'nav-link' %></h6>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div id="modalVersionMessage" class="modal fade" tabindex="-1" role="dialog">
-    <br/>
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title"><%= t 'news.title' %></h4>
-        </div>
-        <div id="modalNews" class="modal-body">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><%= t 'close' %></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <% if @should_show_news %>
-  <script>
-    $(document).ready(function() {
-      showModalNews();
-    });
-  </script>
-<% end %>
-</body>
-</html>
+</div>
