@@ -2,9 +2,9 @@
 pt-BR:
   activerecord:
     models:
-      user: Auditoria
+      auditing: Auditoria
     attributes:
-      user:
+      auditing:
         ip: IP
         event: Evento
         event_date: Data/hora do evento
