@@ -30,7 +30,5 @@ module RadarPgcs
     # Load project specific environment variables
     ENV['APP_VERSION'] = '0.1.0'
     ENV['PROJECT_SOURCE_URL'] = 'https://github.com/radarpgcs/radar-pgcs'
-    ENV['PROJECT_ISSUES_URL'] = 'https://github.com/radarpgcs/radar-pgcs/issues'
-    ENV['PROJECT_WIKI_URL'] = 'https://github.com/radarpgcs/radar-pgcs/wiki'
   end
 end

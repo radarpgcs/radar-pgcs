@@ -2,6 +2,7 @@
 pt-BR:
   app_name: Radar PGCS
   sign_out: Sair
+  project_site: Site do projeto
   alert:
     title:
       info: Informação
