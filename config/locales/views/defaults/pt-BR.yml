@@ -7,6 +7,10 @@ pt-BR:
     title: Notícias
     subtitle: Notas sobre a versão %{version}
   project_site: Site do projeto
+  home: Início
+  login: Login
+  contact: Contato
+  faq: FAQ
   alert:
     title:
       info: Informação

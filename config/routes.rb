@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/authenticate', to: 'application#sign_in', as: 'sign_in'
   delete '/logout', to: 'application#sign_out', as: 'signout'
   get '/news', to: 'application#news', as: 'news'
+  get '/faq', to: 'application#faq', as: 'faq'
 end

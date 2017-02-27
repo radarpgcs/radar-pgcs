@@ -11,13 +11,13 @@ class ApplicationController < ActionController::Base
       @news = News.where(version: ENV['APP_VERSION'])
       render '/home'
     else
-      render '/index', layout: false
+      render '/index', layout: 'public'
     end
   end
 
   # GET /login
   def login
-    render '/login', layout: false
+    render '/login', layout: 'public'
   end
 
   # POST /authenticate
@@ -30,8 +30,8 @@ class ApplicationController < ActionController::Base
 
       Rails.logger.info "User #{user.registry} has just signed in."
     else
-      flash[:danger] = t 'login.authentication_failed.message'
-      render '/login', layout: false
+      flash[:danger] = t '_login.authentication_failed.message'
+      render '/login', layout: 'public'
     end
   end
 
@@ -41,6 +41,12 @@ class ApplicationController < ActionController::Base
     log_out
     Rails.logger.info message
     redirect_to home_path
+  end
+
+  # GET /faq
+  def faq
+    layout = (logged_in?) ? 'application' : 'public'
+    render '/faq', layout: layout
   end
 
   # GET /news

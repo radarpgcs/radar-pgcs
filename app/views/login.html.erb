@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <title><%= t '.title' %></title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  
-  <%= csrf_meta_tags %>
-  <meta charset="UTF-8">
-  <style type="text/css">
+<style type="text/css">
 .login-box {
   width:400px;
   height:100px;
@@ -17,15 +8,14 @@
   margin-top:-50px;
   margin-left:-50px;
 }
-  </style>
-</head>
-<body>
+</style>
+
 <div class="login-box">
   <div class="row">
     <div class="col-md-12 text-center">
       <h2>
-        <%= t '.title' %>
-        <%= image_tag 'satellite.png' %>
+        <%= t '_login.title' %>
+        <%= image_tag 'satellite-dish-32.png' %>
       </h2>
     </div>
   </div>
@@ -44,18 +34,18 @@
       <div class="jumbotron">
         <%= form_tag sign_in_path, method: 'POST' do %>
           <div class="row">
-            <div class="col-md-4"><label for="identity"><%= t '.identity' %></label></div>
+            <div class="col-md-4"><label for="identity"><%= t '_login.identity' %></label></div>
             <div class="col-md-4">
               <input type="text" required maxlength="25" id="identity" name="identity" value="<%= params[:identity] %>" autofocus/>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-4"><label for="password"><%= t '.password' %></label></div>
+            <div class="col-md-4"><label for="password"><%= t '_login.password' %></label></div>
             <div class="col-md-4"><input type="password" required maxlength="20" id="password" name="password" value=""/></div>
           </div>
           <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4"><button type="submit" class="btn btn-info"><%= t '.sign_in' %></button></div>
+            <div class="col-md-4"><button type="submit" class="btn btn-info"><%= t '_login..sign_in' %></button></div>
           </div>
         <% end %>
       </div>
@@ -63,6 +53,4 @@
   </div>
 </div>
 
-  
-</body>
-</html>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
