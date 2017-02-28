@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
       <h2>
-        <%= t '_login.title' %>
+        <%= t 'login.title' %>
         <%= image_tag 'satellite-dish-32.png' %>
       </h2>
     </div>
@@ -34,18 +34,18 @@
       <div class="jumbotron">
         <%= form_tag sign_in_path, method: 'POST' do %>
           <div class="row">
-            <div class="col-md-4"><label for="identity"><%= t '_login.identity' %></label></div>
+            <div class="col-md-4"><label for="identity"><%= t 'login.identity' %></label></div>
             <div class="col-md-4">
               <input type="text" required maxlength="25" id="identity" name="identity" value="<%= params[:identity] %>" autofocus/>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-4"><label for="password"><%= t '_login.password' %></label></div>
+            <div class="col-md-4"><label for="password"><%= t 'login.password' %></label></div>
             <div class="col-md-4"><input type="password" required maxlength="20" id="password" name="password" value=""/></div>
           </div>
           <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4"><button type="submit" class="btn btn-info"><%= t '_login..sign_in' %></button></div>
+            <div class="col-md-4"><button type="submit" class="btn btn-info"><%= t 'login..sign_in' %></button></div>
           </div>
         <% end %>
       </div>

@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
       Rails.logger.info "User #{user.registry} has just signed in."
     else
-      flash[:danger] = t '_login.authentication_failed.message'
+      flash[:danger] = t 'login.authentication_failed.message'
       render '/login', layout: 'public'
     end
   end
