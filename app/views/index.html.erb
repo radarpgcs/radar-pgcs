@@ -42,5 +42,11 @@
       </div>
     </div>
   </div>
+  <%= build_menu_footer menu_items: [
+    { label: t('menu.footer.home'), path: home_path },
+    { label: t('menu.footer.contact'), path: contact_path },
+    { label: t('menu.footer.faq'), path: faq_path },
+    { label: t('menu.footer.project_site'), path: ENV['PROJECT_SOURCE_URL'] }
+  ]%>
 </body>
 </html>

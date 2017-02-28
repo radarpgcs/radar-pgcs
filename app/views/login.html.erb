@@ -1,56 +1,75 @@
-<style type="text/css">
-.login-box {
-  width:400px;
-  height:100px;
-  position:absolute;
-  top:30%;
-  left:40%;
-  margin-top:-50px;
-  margin-left:-50px;
-}
-</style>
-
-<div class="login-box">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h2>
-        <%= t 'login.title' %>
-        <%= image_tag 'satellite-dish-32.png' %>
-      </h2>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title><%= t '.title' %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <style type="text/css">
+  .login-box {
+    width:400px;
+    height:100px;
+    position:absolute;
+    top:30%;
+    left:40%;
+    margin-top:-50px;
+    margin-left:-50px;
+  }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>
+          <%= t 'login.title' %>
+          <%= image_tag 'satellite-dish-32.png' %>
+        </h2>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <% flash.each do |key, message| %>
-        <div id="<%= key %>_message" class="alert alert-<%= key %> alert-dismissable">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <b><%= t "alert.title.#{key}" %></b>
+    <div class="row">
+      <div class="col-md-12">
+        <% flash.each do |key, message| %>
+          <div id="<%= key %>_message" class="alert alert-<%= key %> alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <b><%= t "alert.title.#{key}" %></b>
 
-          <p id="p_<%= key %>"><%= message %></p>
-        </div>
-      <% end %>
-
-      <div class="jumbotron">
-        <%= form_tag sign_in_path, method: 'POST' do %>
-          <div class="row">
-            <div class="col-md-4"><label for="identity"><%= t 'login.identity' %></label></div>
-            <div class="col-md-4">
-              <input type="text" required maxlength="25" id="identity" name="identity" value="<%= params[:identity] %>" autofocus/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4"><label for="password"><%= t 'login.password' %></label></div>
-            <div class="col-md-4"><input type="password" required maxlength="20" id="password" name="password" value=""/></div>
-          </div>
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"><button type="submit" class="btn btn-info"><%= t 'login..sign_in' %></button></div>
+            <p id="p_<%= key %>"><%= message %></p>
           </div>
         <% end %>
+
+        <div class="jumbotron">
+          <%= form_tag sign_in_path, method: 'POST' do %>
+            <div class="row">
+              <div class="col-md-4"><label for="identity"><%= t 'login.identity' %></label></div>
+              <div class="col-md-4">
+                <input type="text" required maxlength="25" id="identity" name="identity" value="<%= params[:identity] %>" autofocus/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label for="password"><%= t 'login.password' %></label></div>
+              <div class="col-md-4"><input type="password" required maxlength="20" id="password" name="password" value=""/></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><button type="submit" class="btn btn-info"><%= t 'login..sign_in' %></button></div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+  <%= build_menu_footer menu_items: [
+    { label: t('menu.footer.home'), path: home_path },
+    { label: t('menu.footer.contact'), path: contact_path },
+    { label: t('menu.footer.faq'), path: faq_path },
+    { label: t('menu.footer.project_site'), path: ENV['PROJECT_SOURCE_URL'] }
+  ]%>
+</body>
+</html>

@@ -11,13 +11,13 @@ class ApplicationController < ActionController::Base
       @news = News.where(version: ENV['APP_VERSION'])
       render '/home'
     else
-      render '/index', layout: 'public'
+      render '/index', layout: false
     end
   end
 
   # GET /login
   def login
-    render '/login', layout: 'public'
+    render '/login', layout: false
   end
 
   # POST /authenticate
