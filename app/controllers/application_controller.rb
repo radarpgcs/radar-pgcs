@@ -49,6 +49,24 @@ class ApplicationController < ActionController::Base
     render '/faq', layout: layout
   end
 
+  # GET /contato
+  def contact
+    layout = (logged_in?) ? 'application' : 'public'
+    render '/contact', layout: layout
+  end
+
+  # POST /send_email
+  def send_email
+    unless verify_recaptcha
+      layout = (logged_in?) ? 'application' : 'public'
+      flash[:danger] = flash[:recaptcha_error].dup
+      flash.delete(:recaptcha_error)
+      return render '/contact', layout: layout
+    end
+
+
+  end
+
   # GET /news
   def news
     html = '<p align="justify">'
