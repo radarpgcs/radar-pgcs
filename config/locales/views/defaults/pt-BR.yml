@@ -1,14 +1,19 @@
 ---
 pt-BR:
   app_name: Radar PGCS
-  sign_out: Sair
+  menu:
+    header:
+      home: Radar PGCS
+      promotion: Promoções
+      login: Entrar
+      sign_out: Sair
+      title: Radar PGCS
+      subtitle: 'Este radar despertará seus "sentidos de aranha".'
   close: Fechar
   news:
     title: Notícias
     subtitle: Notas sobre a versão %{version}
   project_site: Site do projeto
-  home: Início
-  login: Login
   contact: Contato
   faq: FAQ
   alert:

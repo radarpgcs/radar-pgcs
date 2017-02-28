@@ -14,8 +14,6 @@ pt-BR:
       title: Autenticação falhou
       message: Não foi possível autenticar com os dados informados.
   home:
-    title: Radar PGCS
-    subtitle: 'Este radar despertará seus "sentidos de aranha".'
     promotion:
       title: Promoções
       subtitle: Encontre a lista de promovidos por mérito e tempo de serviço de 2009 até o momento.
