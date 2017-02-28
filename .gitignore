@@ -25,3 +25,5 @@ init_scm_evn.sh
 
 # Ignore script to change commiter.
 set_correct_commiter.sh
+
+.env
