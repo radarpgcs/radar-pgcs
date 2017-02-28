@@ -4,6 +4,8 @@ module MenuHelper
   WHITE_SPACE = ' '
 
   def build_menu_header(options = {})
+    return if request[:menu_header_built]
+    
     menu = []
     menu << _break_tab('<nav class="navbar navbar-toggleable-md fixed-top">')
     menu.concat(_button_icon)
@@ -11,7 +13,8 @@ module MenuHelper
     menu.concat(_container_menu_items(options))
     menu << _break_tab('</nav>')
     menu.concat(_container_title)
-
+    
+    request[:menu_header_built] = true
     menu.join.html_safe
   end
 
