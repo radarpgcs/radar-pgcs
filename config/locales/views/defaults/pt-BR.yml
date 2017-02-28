@@ -9,6 +9,11 @@ pt-BR:
       sign_out: Sair
       title: Radar PGCS
       subtitle: 'Este radar despertará seus "sentidos de aranha".'
+    footer:
+      home: Início
+      contact: Contato
+      faq: FAQ
+      project_site: Site do projeto
   close: Fechar
   news:
     title: Notícias
