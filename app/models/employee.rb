@@ -11,12 +11,13 @@ class Employee
   field :department, type: String
   field :regional, type: String
   field :hiring_date, type: Date
-  field :active, type: Boolean
+  field :active, type: Mongoid::Boolean
   field :eventual_gfe, type: Float
   field :views, type: Integer
   field :tags, type: Array
 
-  has_many :payment
+  has_many :payments
+  has_many :promotions
 
   validates :registry, presence: true, uniqueness: true
   validates :name, presence: true, length: { minimum: 5, maximum: 80 }

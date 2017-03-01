@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 2009
+  type: PM
+  external_staff: true
+
+two:
+  year: 2010
+  type: PTS
+  external_staff: false
