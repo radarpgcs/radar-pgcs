@@ -13,6 +13,16 @@ pt-BR:
     authentication_failed:
       title: Autenticação falhou
       message: Não foi possível autenticar com os dados informados.
+  contact:
+    title: Contato
+    name: Nome
+    email: e-mail
+    subject: Assunto
+    message: Mensagem
+    registry: Matrícula
+    send: Enviar
+    erase: Apagar
+    success: Mensagem enviada com sucesso!
   home:
     promotion:
       title: Promoções

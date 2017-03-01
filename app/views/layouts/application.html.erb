@@ -11,10 +11,25 @@
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <%= build_menu_header home_path: home_path, menu_items: [
+    { label: t('menu.header.promotion'), path: '#promotion' }
+  ] %>
+
+  <% flash.each do |key, message| %>
+    <div class="row">
+      <div id="<%= key %>_message" class="alert alert-<%= key.sub 'reCAPTCHA', '' %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <b><%= t "alert.title.#{key}" %></b>
+
+        <p id="p_<%= key %>"><%= message %></p>
+      </div>
+    </div>
+  <% end %>
+
   <%= yield %>
   <%= build_menu_footer menu_items: [
     { label: t('menu.footer.home'), path: home_path },
-    { label: t('menu.footer.contact'), path: '' },
+    { label: t('menu.footer.contact'), path: contact_path },
     { label: t('menu.footer.faq'), path: faq_path },
     { label: t('menu.footer.project_site'), path: ENV['PROJECT_SOURCE_URL'] }
   ]%>

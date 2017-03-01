@@ -1,0 +1,11 @@
+Radar PGCS
+
+Contato
+
+<%= t 'contact.name' %>: <%= @params[:name] %>
+<%= t 'contact.email' %>: <%= @params[:email] %>
+<% if @params[:registry] %>
+<%= t 'contact.registry' %>: <%= @params[:registry] %>
+<% end %>
+<%= t 'contact.subject' %>: <%= @params[:subject] %>
+<%= t 'contact.message' %>: <%= @params[:message] %>

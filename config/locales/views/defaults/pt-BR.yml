@@ -18,12 +18,13 @@ pt-BR:
   news:
     title: Notícias
     subtitle: Notas sobre a versão %{version}
-  project_site: Site do projeto
-  contact: Contato
-  faq: FAQ
   alert:
     title:
       info: Informação
       success: Sucesso
       warning: Atenção
       danger: Erro
+  recaptcha:
+    errors:
+      verification_failed: 'Verificação do reCAPTCHA falhou, favor tentar novamente.'
+      recaptcha_unreachable: 'Não foi possível auferir a resposta do reCAPTCHA. Favor tentar novamente.'

@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-8 text-center">
+    <h3><%= t '.title' %></h3>
+  </div>
+</div>
+
+<br/>
+
+<%= form_tag send_email_path, method: :post, 'accept-charset' => "UTF-8" do %>
+  <div name="name" class="row">
+    <div class="col-md-1">
+      <label for="name"><%= t '.name' %></label>
+    </div>
+    <div class="col-md-8">
+      <input type="text" id="name" name="name" style="width: 350px; height: 28px;" value="<%= params[:name] %>" required autofocus maxlength="50"/>
+    </div>
+  </div>
+
+  <div name="email" class="row">
+    <div class="col-md-1">
+      <label for="email"><%= t '.email' %></label>
+    </div>
+    <div class="col-md-8">
+      <input type="email" id="email" name="email" style="width: 350px; height: 28px;" value="<%= params[:email] %>" required maxlength="70"/>
+    </div>
+  </div>
+
+  <div name="subject" class="row">
+    <div class="col-md-1">
+      <label for="subject"><%= t '.subject' %></label>
+    </div>
+    <div class="col-md-8">
+      <input type="text" id="subject" name="subject" style="width: 350px; height: 28px;" value="<%= params[:subject] %>" required maxlength="50"/>
+    </div>
+  </div>
+
+  <div name="message" class="row">
+    <div class="col-md-1">
+      <label for="message"><%= t '.message' %></label>
+    </div>
+    <div class="col-md-8">
+      <textarea id="message" name="message" style="width: 350px; height: 300px;" required maxlength="700"><%= params[:message] %></textarea>
+    </div>
+  </div>
+
+  <div name="captcha" class="row">
+    <div class="col-md-1">
+      
+    </div>
+    <div class="col-md-8">
+      <%= recaptcha_tags %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+      <input type="submit" value="<%= t '.send' %>" class="btn btn-primary"/>
+      <input type="reset" value="<%= t '.erase' %>" class="btn btn-primary"/>
+    </div>
+  </div>
+<% end %>

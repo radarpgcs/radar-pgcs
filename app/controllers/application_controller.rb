@@ -64,7 +64,11 @@ class ApplicationController < ActionController::Base
       return render '/contact', layout: layout
     end
 
-
+    params[:registry] = current_user.registry if logged_in?
+    ApplicationMailer.send_contact_email(params).deliver
+    flash[:success] = t 'contact.success'
+    
+    redirect_to contact_path
   end
 
   # GET /news

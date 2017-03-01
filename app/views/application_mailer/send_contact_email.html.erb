@@ -1,0 +1,10 @@
+<h4>Radar PGCS</h4>
+<h5>Contato</h5>
+
+<b><%= t 'contact.name' %>:</b> <%= @params[:name] %><br/>
+<b><%= t 'contact.email' %>:</b> <%= @params[:email] %><br/>
+<% if @params[:registry] %>
+<b><%= t 'contact.registry' %>:</b> <%= @params[:registry] %><br/>
+<% end %>
+<b><%= t 'contact.subject' %>:</b> <%= @params[:subject] %><br/>
+<b><%= t 'contact.message' %>:</b> <%= @params[:message] %>
