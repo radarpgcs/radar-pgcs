@@ -27,3 +27,4 @@ init_scm_evn.sh
 set_correct_commiter.sh
 
 .env
+db/dbfiles/*
