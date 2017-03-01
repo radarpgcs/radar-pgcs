@@ -3,6 +3,7 @@ class Employee
   include EmployeeConcern
 
   field :registry, type: Integer
+  field :cpf, type: String
   field :name, type: String
   field :employment, type: String
   field :category, type: String
