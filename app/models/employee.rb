@@ -16,6 +16,8 @@ class Employee
   field :views, type: Integer
   field :tags, type: Array
 
+  has_many :payment
+
   validates :registry, presence: true, uniqueness: true
   validates :name, presence: true, length: { minimum: 5, maximum: 80 }
   validates :active, presence: true

@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 2017
+  month: 1
+  total: 100.0
+  eventual: 10.32
+two:
+  year: 2017
+  month: 2
+  total: 138.73
+  eventual: 9.08
