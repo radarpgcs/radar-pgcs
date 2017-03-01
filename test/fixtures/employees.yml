@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registry: 12345678
+  name: Johann Wolfgang von Goethe
+  employment: ANALISTA
+  category: CLASSE 1 - PGCS
+  reference: 207-8A
+  department: SUPCD/CDBSA/CDSMB
+  regional: BSA
+  hiring_date: 1832-03-22
+  active: true
+
+two:
+  registry: 87654321
+  name: Fiódor Mikhailovitch Dostoiévski
+  employment: ANALISTA
+  category: CLASSE 1 - PGCS
+  reference: 207-8A
+  department: SUPOP/OPCTA/OPGER
+  regional: CTA
+  hiring_date: 1881-02-09
+  active: true
