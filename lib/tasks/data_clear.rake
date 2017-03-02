@@ -13,6 +13,12 @@ namespace :db do
       Employee.delete_all
     end
 
+    desc 'Delete all data from payments collection'
+    task payments: :environment do
+      puts "Removing #{Payment.count} record(s) from payments collection."
+      Payment.delete_all
+    end
+
     desc 'Delete all data from promotions collection'
     task promotions: :environment do
       puts "Removing #{Promotion.count} record(s) from promotions collection."
