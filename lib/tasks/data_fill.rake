@@ -30,5 +30,31 @@ namespace :db do
       end
       puts "Employees collection has now #{Employee.count} record(s)."
     end
+
+    desc 'Fill promotions collection'
+    task promotions: :environment do
+      (2009..Time.now.year).each do |year|
+        file = Rails.root.join('db', "dbfiles", "promotions-db-#{year}.yaml")
+        next unless File.exist? file
+        puts "Reading file #{file}"
+
+        data = YAML.load_file(file)
+        data.each_key do |year|
+          data[year].each_key do |type|
+            data[year][type].each_key do |staff_location|
+              data[year][type][staff_location].each do |id|
+                employee = Employee.find_by(registry: id.to_i)
+                raise "There isn't any employee registered with id #{id}." if employee.nil?
+
+                Promotion.create!(
+                  employee: employee, year: year, type: type,
+                  external_staff: (staff_location == 'quadro_externo')
+                )
+              end
+            end
+          end
+        end
+      end
+    end
   end
 end
