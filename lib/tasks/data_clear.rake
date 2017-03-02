@@ -12,5 +12,11 @@ namespace :db do
       puts "Removing #{Employee.count} record(s) from employees collection."
       Employee.delete_all
     end
+
+    desc 'Delete all data from promotions collection'
+    task promotions: :environment do
+      puts "Removing #{Promotion.count} record(s) from promotions collection."
+      Promotion.delete_all
+    end
   end
 end
