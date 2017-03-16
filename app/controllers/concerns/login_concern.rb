@@ -25,8 +25,8 @@ module LoginConcern
 
   def log_in(user)
     if user.status == 'BLOCKED'
-      flash[:danger] = t 'sign_in.blocked_user'
-      return render('/login', layout: 'public')
+      flash[:danger] = t 'sign_in.blocked_user', user: user.registry, note: user.status_note
+      return render('/login', layout: false)
     elsif user.status == 'INACTIVE'
       flash[:warning] = t 'sign_in.inactive_user'
       return render('/activate_user')

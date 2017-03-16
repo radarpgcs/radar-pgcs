@@ -25,7 +25,7 @@ pt-BR:
       warning: Atenção
       danger: Erro
   sign_in:
-    blocked_user: 'Usuário %{user} não pôde ser autenticado porque está bloqueado. %{note}'
+    blocked_user: 'Usuário %{user} não pôde ser autenticado porque está bloqueado. Nota do administrador: %{note}'
     inactive_user: 'A sua conta precisa ser ativada. Favor confirmar a sua nova senha.'
   recaptcha:
     errors:
