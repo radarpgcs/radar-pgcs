@@ -43,6 +43,10 @@ module LoginConcern
     session.delete(:user_so)
     Services::Security.audit_logout(@current_user, request.remote_ip)
     @current_user = nil
+
+    message = (logged_in?) ? "User #{current_user.registry} has just signed out." : 'Session destroyed by expiration.'
+    Rails.logger.info message
+    redirect_to home_path
   end
 
   def caller_url

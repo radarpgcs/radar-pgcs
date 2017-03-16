@@ -34,10 +34,7 @@ class ApplicationController < ActionController::Base
 
   # DELETE /logout
   def sign_out
-    message = (logged_in?) ? "User #{current_user.registry} has just signed out." : 'Session destroyed by expiration.'
     log_out
-    Rails.logger.info message
-    redirect_to home_path
   end
 
   # GET /faq
