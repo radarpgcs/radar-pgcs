@@ -24,6 +24,9 @@ pt-BR:
       success: Sucesso
       warning: Atenção
       danger: Erro
+  sign_in:
+    blocked_user: 'Usuário %{user} não pôde ser autenticado porque está bloqueado. %{note}'
+    inactive_user: 'A sua conta precisa ser ativada. Favor confirmar a sua nova senha.'
   recaptcha:
     errors:
       verification_failed: 'Verificação do reCAPTCHA falhou, favor tentar novamente.'

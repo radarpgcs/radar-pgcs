@@ -5,6 +5,24 @@ module Services
     SALT_NUMBER_SIZE = 45
 
     class << self
+      def audit_login(user, ip)
+        Auditing.new do |a|
+          a.user = user
+          a.ip = ip
+          a.event = 'LOGIN'
+          a.event_date = Time.now
+        end.save
+      end
+
+      def audit_logout(user, ip)
+        Auditing.new do |a|
+          a.user = user
+          a.ip = ip
+          a.event = 'LOGOUT'
+          a.event_date = Time.now
+        end.save
+      end
+
       def generate_hash(raw_password, salt = nil)
         salt ||= self.generate_salt_number
 

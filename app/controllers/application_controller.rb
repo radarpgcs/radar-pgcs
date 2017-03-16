@@ -24,14 +24,11 @@ class ApplicationController < ActionController::Base
   def sign_in
     user = authenticate_login params[:identity], params[:password]
     if user
-      log_in user
-      redirect_to caller_url
       flash.clear
-
-      Rails.logger.info "User #{user.registry} has just signed in."
+      log_in user
     else
       flash[:danger] = t 'login.authentication_failed.message'
-      render '/login', layout: 'public'
+      render '/login', layout: false
     end
   end
 

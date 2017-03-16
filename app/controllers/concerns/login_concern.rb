@@ -20,24 +20,28 @@ module LoginConcern
     auth_ok = _password_match? user, pass
     Rails.logger.info "Login: Invalid password to user with identification #{uid}" unless auth_ok
 
-    user
+    auth_ok ? user : nil
   end
 
   def log_in(user)
-    session[:user_so] = {
-      :registry => user.registry
-    }
+    if user.status == 'BLOCKED'
+      flash[:danger] = t 'sign_in.blocked_user'
+      return render('/login', layout: 'public')
+    elsif user.status == 'INACTIVE'
+      flash[:warning] = t 'sign_in.inactive_user'
+      return render('/activate_user')
+    end
 
-    Auditing.new do |e|
-      e.user = user
-      e.ip = request.remote_ip
-      e.event = 'LOGIN'
-      e.event_date = Time.now
-    end.save
+    _save_session user
+    Services::Security.audit_login(user, request.remote_ip)
+
+    Rails.logger.info "User '#{session[:user_so][:nickname]}' has just signed in."
+    redirect_to caller_url
   end
 
   def log_out
     session.delete(:user_so)
+    Services::Security.audit_logout(@current_user, request.remote_ip)
     @current_user = nil
   end
 
@@ -55,5 +59,17 @@ module LoginConcern
   def _password_match?(user, raw_password)
     pass_hash = Services::Security.generate_hash(raw_password, user.salt_number)
     user.password == pass_hash
+  end
+
+  def _save_session(user)
+    e = Employee.find_by registry: user.registry
+
+    session[:user_so] = {
+      registry: user.registry,
+      nickname: "#{e.registry}: #{e.name.split(/\s+/).first.capitalize}",
+      department: e.department,
+      hiring_date: e.hiring_date.to_s.split('-').join(' '),
+      regional: e.regional
+    }
   end
 end

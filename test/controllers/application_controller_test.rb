@@ -1,7 +1,20 @@
 require 'test_helper'
 
 class ApplicationControllerTest < ActionController::TestCase
-  
+
+  setup do
+    registry = 12345678
+    user = User.where(registry: registry).first
+
+    User.create!(registry: registry, password: '12345',
+      status: 'ACTIVE',roles: %w(MEMBER)) unless user
+
+    employee = Employee.where(registry: registry).first
+
+    Employee.create!(registry: registry, name: 'Johann Wolfgang von Goethe',
+      active: true) unless employee
+  end
+
   test 'should get index page' do
     get :index
     assert_response :success
@@ -21,8 +34,8 @@ class ApplicationControllerTest < ActionController::TestCase
   end
 
   test 'should sign in' do
-    user = User.all.first
-    post :sign_in, params: { identity: user.registry, password: user.password }
+    user = User.find_by registry: 12345678
+    post :sign_in, params: { identity: user.registry, password: '12345' }
     
     assert_not flash[:danger]
     assert_response 302
