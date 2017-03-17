@@ -94,7 +94,23 @@ class ApplicationControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'should not get activation page when its status is not INACTIVE' do
+    user = User.find_by registry: 12345678
+    user.status = 'ACTIVE'
+    user.password = DEFAULT_USR_PWD
+    user.save
+
+    get :activate_user, params: { registry: 12345678 }
+    assert_response 302
+    assert_redirected_to home_path
+  end
+
   test 'should get user activation page' do
+    user = User.find_by registry: 12345678
+    user.status = 'INACTIVE'
+    user.password = DEFAULT_USR_PWD
+    user.save
+
     get :activate_user, params: { registry: 12345678 }
     assert_response :success
     assert_template 'activate_user', layout: 'public'

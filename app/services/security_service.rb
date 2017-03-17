@@ -40,8 +40,11 @@ module Services
         end
 
         user = User.find_by registry: options[:registry]
-        raise Exceptions::NotAuthorizedException.new(
-          I18n.translate('activate_account.invalid_status')) if user.status != 'INACTIVE'
+        if user.status != 'INACTIVE'
+          Rails.logger.warn "User #{user.registry} tried activate its account with status #{user.status}"
+          raise Exceptions::NotAuthorizedException.new(
+            I18n.translate('activate_account.invalid_status'))
+        end
 
         user.password = options[:new_password]
         user.status = 'ACTIVE'

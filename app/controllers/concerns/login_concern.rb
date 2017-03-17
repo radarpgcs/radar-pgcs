@@ -56,7 +56,7 @@ module LoginConcern
       Services::Security.activate_account options
       flash[:info] = t 'activate_user.activation_success'
       _login User.find_by(registry: params[:registry]), home_path
-    rescue StandardError => ex
+    rescue Exceptions::NotAuthorizedException => ex
       flash[:danger] = ex.message
       @employee = Employee.find_by registry: params[:registry]
       render '/activate_user', layout: 'public'

@@ -101,6 +101,13 @@ class ApplicationController < ActionController::Base
 
   # GET /ativar-conta-usuario/:registry
   def activate_user
+    user = User.only(:status).find_by(registry: params[:registry])
+    if user.status != 'INACTIVE'
+      Rails.logger.warn "User #{params[:registry]} tried activate its account with status #{user.status}"
+      redirect_to home_path
+      return
+    end
+
     @employee = Employee.find_by registry: params[:registry]
     render '/activate_user', layout: 'public'
   end
