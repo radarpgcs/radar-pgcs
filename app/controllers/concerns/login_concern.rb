@@ -64,7 +64,7 @@ module LoginConcern
   end
 
   private
-  def _login(user, url = caller_url)
+  def _login(user, url = _caller_url)
     _save_session user
     Services::Security.audit_login(user, request.remote_ip)
 
@@ -89,7 +89,7 @@ module LoginConcern
     }
   end
 
-  def caller_url
+  def _caller_url
     regex = /\Ahttps?:\/\/(#{request.host}):?(#{request.port})?/
     if (request.referer =~ regex) == 0
       caller_path = request.referer.sub regex, ''
