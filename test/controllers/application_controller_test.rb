@@ -79,6 +79,11 @@ class ApplicationControllerTest < ActionController::TestCase
     assert_redirected_to home_path
   end
 
+  test 'should get contact page' do
+    get :contact
+    assert_response :success
+  end
+
   test 'should get faq page' do
     get :faq
     assert_response :success
