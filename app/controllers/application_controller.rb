@@ -4,8 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include LoginConcern
+  include ErrorHandlerConcern
 
   before_action :set_menu_header
+
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :mid_record_not_found
+  #rescue_from Exceptions::NotAuthorizedException, with: :e_not_authorized_exception
+  rescue_from ActionController::InvalidAuthenticityToken, with: :ac_invalid_authenticity_token
 
   # GET /
   def index
