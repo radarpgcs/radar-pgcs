@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/faq', to: 'application#faq', as: 'faq'
   get '/contato', to: 'application#contact', as: 'contact'
   post '/send_email', to: 'application#send_email', as: 'send_email'
+  get '/ativar-conta-usuario/:registry', to: 'application#activate_user', as: 'activate_user'
+  post '/activate_user', to: 'application#activate_user_account', as: 'activate_user_account'
 end

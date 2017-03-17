@@ -3,6 +3,8 @@ module Services
 
     HASH_ITERATION = 50
     SALT_NUMBER_SIZE = 45
+    MIN_SIZE_PWD = 5
+    MAX_SIZE_PWD = 20
 
     class << self
       def audit_login(user, ip)
@@ -21,6 +23,27 @@ module Services
           a.event = 'LOGOUT'
           a.event_date = Time.now
         end.save
+      end
+
+      def activate_account(options = {})
+        if options[:new_password] != options[:confirm_password]
+          raise I18n.translate 'activate_account.password.typo'
+        elsif options[:new_password].size < MIN_SIZE_PWD || options[:new_password].size > MAX_SIZE_PWD
+          raise I18n.translate(
+            'activate_account.password.size',
+            minimum: MIN_SIZE_PWD,
+            maximum: MAX_SIZE_PWD
+          )
+        end
+
+        user = User.find_by registry: options[:registry]
+        raise I18n.translate('activate_account.invalid_status') if user.status != 'INACTIVE'
+
+        user.password = options[:new_password]
+        user.status = 'ACTIVE'
+        user.status_note = nil
+
+        user.save!
       end
 
       def generate_hash(raw_password, salt = nil)

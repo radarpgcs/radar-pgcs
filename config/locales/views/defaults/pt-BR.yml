@@ -26,7 +26,7 @@ pt-BR:
       danger: Erro
   sign_in:
     blocked_user: 'Usuário %{user} não pôde ser autenticado porque está bloqueado. Nota do administrador: %{note}'
-    inactive_user: 'A sua conta precisa ser ativada. Favor confirmar a sua nova senha.'
+    inactive_user: 'A sua conta precisa ser ativada. Favor confirmar as suas credenciais.'
   recaptcha:
     errors:
       verification_failed: 'Verificação do reCAPTCHA falhou, favor tentar novamente.'

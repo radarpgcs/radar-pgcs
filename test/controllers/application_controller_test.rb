@@ -46,7 +46,7 @@ class ApplicationControllerTest < ActionController::TestCase
     expected_message = I18n.translate('sign_in.blocked_user', user: user.registry, note: user.status_note)
     assert_equal expected_message, flash[:danger]
   end
-=begin
+
   test 'should redirect inactive user to activation page' do
     user = User.find_by registry: 12345678
     user.status = 'INACTIVE'
@@ -54,12 +54,12 @@ class ApplicationControllerTest < ActionController::TestCase
     user.save
 
     post :sign_in, params: { identity: user.registry, password: DEFAULT_USR_PWD }
-    assert_template 'activate_user', layout: 'public'
+    assert_redirected_to activate_user_path(registry: user.registry)
 
     expected_message = I18n.translate('sign_in.inactive_user')
     assert_equal expected_message, flash[:warning]
   end
-=end
+
   test 'should sign in' do
     user = User.find_by registry: 12345678
     user.status = 'ACTIVE'
@@ -92,5 +92,11 @@ class ApplicationControllerTest < ActionController::TestCase
   test 'should get faq page' do
     get :faq
     assert_response :success
+  end
+
+  test 'should get user activation page' do
+    get :activate_user, params: { registry: 12345678 }
+    assert_response :success
+    assert_template 'activate_user', layout: 'public'
   end
 end

@@ -23,6 +23,21 @@ pt-BR:
     send: Enviar
     erase: Apagar
     success: Mensagem enviada com sucesso!
+  activate_user:
+    title: Ativação da conta
+    registry: Matrícula
+    name: Nome
+    password: Senha
+    new_password: Nova senha
+    confirm_password: Confirmar senha
+    activate: Ativar
+    erase: Apagar
+    activation_success: Ativação da sua conta foi concluída.
+  activate_account:
+    password:
+      typo: "Campos 'Nova senha' e 'Confirmar senha' não conferem."
+      size: 'Nova senha deve ter mínimo de %{minimum} e máximo de %{maximum} caracteres.'
+    invalid_status: É mandatório que a conta esteja inativa para usar esta funcionalidade.
   home:
     promotion:
       title: Promoções

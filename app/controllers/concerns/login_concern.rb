@@ -26,17 +26,13 @@ module LoginConcern
   def log_in(user)
     if user.status == 'BLOCKED'
       flash[:danger] = t 'sign_in.blocked_user', user: user.registry, note: user.status_note
-      return render('/login', layout: false)
+      render('/login', layout: false)
     elsif user.status == 'INACTIVE'
       flash[:warning] = t 'sign_in.inactive_user'
-      return render('/activate_user')
+      redirect_to activate_user_path(registry: user.registry)
+    else
+      _login user
     end
-
-    _save_session user
-    Services::Security.audit_login(user, request.remote_ip)
-
-    Rails.logger.info "User '#{session[:user_so][:nickname]}' has just signed in."
-    redirect_to caller_url
   end
 
   def log_out
@@ -49,17 +45,33 @@ module LoginConcern
     redirect_to home_path
   end
 
-  def caller_url
-    regex = /\Ahttps?:\/\/(#{request.host}):?(#{request.port})?/
-    if (request.referer =~ regex) == 0
-      caller_path = request.referer.sub regex, ''
-      ((caller_path != login_path) && (caller_path != sign_in_path)) ? caller_path : home_path
-    else
-      home_path
+  def activate_account
+    options = {
+      registry: params[:registry],
+      new_password: params[:new_password],
+      confirm_password: params[:confirm_password]
+    }
+
+    begin
+      Services::Security.activate_account options
+      flash[:info] = t 'activate_user.activation_success'
+      _login User.find_by(registry: params[:registry]), home_path
+    rescue RuntimeError => e
+      flash[:danger] = e.message
+      @employee = Employee.find_by registry: params[:registry]
+      render '/activate_user', layout: 'public'
     end
   end
 
   private
+  def _login(user, url = caller_url)
+    _save_session user
+    Services::Security.audit_login(user, request.remote_ip)
+flash[:info] = 'MALABIBALA'
+    Rails.logger.info "User '#{session[:user_so][:nickname]}' has just signed in."
+    redirect_to url
+  end
+
   def _password_match?(user, raw_password)
     pass_hash = Services::Security.generate_hash(raw_password, user.salt_number)
     user.password == pass_hash
@@ -75,5 +87,15 @@ module LoginConcern
       hiring_date: e.hiring_date.to_s.split('-').join(' '),
       regional: e.regional
     }
+  end
+
+  def caller_url
+    regex = /\Ahttps?:\/\/(#{request.host}):?(#{request.port})?/
+    if (request.referer =~ regex) == 0
+      caller_path = request.referer.sub regex, ''
+      ((caller_path != login_path) && (caller_path != sign_in_path)) ? caller_path : home_path
+    else
+      home_path
+    end
   end
 end

@@ -78,4 +78,15 @@ class ApplicationController < ActionController::Base
     html << '</ul></p>'
     render html: html.html_safe
   end
+
+  # GET /ativar-conta-usuario/:registry
+  def activate_user
+    @employee = Employee.find_by registry: params[:registry]
+    render '/activate_user', layout: 'public'
+  end
+
+  # POST /activate_user
+  def activate_user_account
+    activate_account
+  end
 end
