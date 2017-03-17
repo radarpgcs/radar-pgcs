@@ -27,17 +27,21 @@ module Services
 
       def activate_account(options = {})
         if options[:new_password] != options[:confirm_password]
-          raise I18n.translate 'activate_account.password.typo'
+          raise Exceptions::NotAuthorizedException.new(
+            I18n.translate 'activate_account.password.typo')
         elsif options[:new_password].size < MIN_SIZE_PWD || options[:new_password].size > MAX_SIZE_PWD
-          raise I18n.translate(
-            'activate_account.password.size',
-            minimum: MIN_SIZE_PWD,
-            maximum: MAX_SIZE_PWD
+          raise Exceptions::NotAuthorizedException.new(
+            I18n.translate(
+              'activate_account.password.size',
+              minimum: MIN_SIZE_PWD,
+              maximum: MAX_SIZE_PWD
+            )
           )
         end
 
         user = User.find_by registry: options[:registry]
-        raise I18n.translate('activate_account.invalid_status') if user.status != 'INACTIVE'
+        raise Exceptions::NotAuthorizedException.new(
+          I18n.translate('activate_account.invalid_status')) if user.status != 'INACTIVE'
 
         user.password = options[:new_password]
         user.status = 'ACTIVE'
