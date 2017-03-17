@@ -5,10 +5,18 @@ class ApplicationController < ActionController::Base
 
   include LoginConcern
 
-  before_filter :set_menu_header
+  before_action :set_menu_header
 
   # GET /
   def index
+    @menu_header = {
+      home_path: '#home',
+      menu_items: [
+        { label: t('news.title'), path: '#news' },
+        { label: t('menu.header.promotion'), path: '#promotion' }
+      ]
+    }
+
     if logged_in?
       @news = News.where(version: ENV['APP_VERSION'])
       render '/home'
@@ -90,5 +98,15 @@ class ApplicationController < ActionController::Base
   # POST /activate_user
   def activate_user_account
     activate_account
+  end
+
+  private
+  def set_menu_header
+    @menu_header = {
+      home_path: home_path,
+      menu_items: [
+        { label: t('menu.header.promotion'), path: '#' }
+      ]
+    }
   end
 end

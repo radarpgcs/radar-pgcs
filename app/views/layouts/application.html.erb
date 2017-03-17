@@ -11,10 +11,9 @@
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
-  <%= build_menu_header home_path: home_path, menu_items: [
-    { label: t('menu.header.promotion'), path: '#promotion' }
-  ] %>
+  <%= build_menu_header home_path: @menu_header[:home_path], menu_items: @menu_header[:menu_items] %>
 
+  <div class="container">
   <% flash.each do |key, message| %>
     <div class="row">
       <div id="<%= key %>_message" class="alert alert-<%= key.sub 'reCAPTCHA', '' %> alert-dismissable">
@@ -25,6 +24,7 @@
       </div>
     </div>
   <% end %>
+  </div>
 
   <%= yield %>
   <%= build_menu_footer menu_items: [
