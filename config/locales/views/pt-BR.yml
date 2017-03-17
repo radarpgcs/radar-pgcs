@@ -32,7 +32,7 @@ pt-BR:
     confirm_password: Confirmar senha
     activate: Ativar
     erase: Apagar
-    activation_success: Ativação da sua conta foi concluída.
+    activation_success: A ativação da sua conta foi concluída.
   activate_account:
     password:
       typo: "Campos 'Nova senha' e 'Confirmar senha' não conferem."
