@@ -84,6 +84,11 @@ class ApplicationControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'should get news page' do
+    get :news
+    assert_response :success
+  end
+
   test 'should get faq page' do
     get :faq
     assert_response :success
