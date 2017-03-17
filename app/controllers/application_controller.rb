@@ -1,3 +1,4 @@
+require Rails.root.join 'app', 'errors', 'exceptions.rb'
 require Rails.root.join 'app', 'services', 'security_service.rb'
 
 class ApplicationController < ActionController::Base
