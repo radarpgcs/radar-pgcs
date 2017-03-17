@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   include LoginConcern
   include ErrorHandlerConcern
 
+  before_action :session_expiry, except: [
+    :index, :login, :sign_in, :sign_out, :faq, :contact, :send_email,
+    :news, :activate_user, :activate_user_account
+  ]
   before_action :set_menu_header
 
   rescue_from Mongoid::Errors::DocumentNotFound, with: :mid_record_not_found

@@ -36,13 +36,16 @@ module LoginConcern
   end
 
   def log_out
-    session.delete(:user_so)
-    Services::Security.audit_logout(@current_user, request.remote_ip)
-    @current_user = nil
-
-    message = (logged_in?) ? "User #{current_user.registry} has just signed out." : 'Session destroyed by expiration.'
-    Rails.logger.info message
+    _logout
     redirect_to home_path
+  end
+
+  def session_expiry
+    if session[:user_so].nil?
+      _logout
+      
+      render '/login', layout: false
+    end
   end
 
   def activate_account
@@ -72,6 +75,15 @@ module LoginConcern
 
     Rails.logger.info "User '#{session[:user_so][:nickname]}' has just signed in."
     redirect_to url
+  end
+
+  def _logout
+    session.delete(:user_so)
+    Services::Security.audit_logout(@current_user, request.remote_ip)
+    @current_user = nil
+
+    message = (logged_in?) ? "User #{current_user.registry} has just signed out." : 'Session destroyed by expiration.'
+    Rails.logger.info message
   end
 
   def _password_match?(user, raw_password)
