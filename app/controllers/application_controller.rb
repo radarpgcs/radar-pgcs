@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   include LoginConcern
 
+  before_filter :set_menu_header
+
   # GET /
   def index
     if logged_in?

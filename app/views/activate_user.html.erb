@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-8 text-center">
+    <h3><%= t '.title' %></h3>
+  </div>
+</div>
+
+<br/>
+
+<%= form_tag activate_user_account_path, method: :post, 'accept-charset' => "UTF-8" do %>
+  <input type="hidden" id="registry" name="registry" value="<%= params[:registry] %>">
+  <div name="id" class="row">
+    <div class="col-md-2">
+      <%= t '.registry' %>
+    </div>
+    <div class="col-md-8">
+      <%= @employee.registry %>
+    </div>
+  </div>
+
+  <div name="name" class="row">
+    <div class="col-md-2">
+      <label for="name"><%= t '.name' %></label>
+    </div>
+    <div class="col-md-8">
+      <%= @employee.name %>
+    </div>
+  </div>
+
+  <div name="password" class="row">
+    <div class="col-md-2">
+      <label for="password"><%= t '.password' %></label>
+    </div>
+    <div class="col-md-8">
+      ********
+    </div>
+  </div>
+
+  <div name="new_password" class="row">
+    <div class="col-md-2">
+      <label for="new_password"><%= t '.new_password' %></label>
+    </div>
+    <div class="col-md-8">
+      <input type="password" id="new_password" name="new_password" style="width: 350px; height: 28px;" value="<%= params[:password] %>" required maxlength="20"/>
+    </div>
+  </div>
+
+  <div name="confirm_password" class="row">
+    <div class="col-md-2">
+      <label for="confirm_password"><%= t '.confirm_password' %></label>
+    </div>
+    <div class="col-md-8">
+      <input type="password" id="confirm_password" name="confirm_password" style="width: 350px; height: 28px;" value="<%= params[:password] %>" required maxlength="20"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <input type="submit" value="<%= t '.activate' %>" class="btn btn-primary"/>
+      <input type="reset" value="<%= t '.erase' %>" class="btn btn-primary"/>
+    </div>
+  </div>
+<% end %>
+
+<br/>
