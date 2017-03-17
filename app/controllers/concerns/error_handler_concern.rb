@@ -13,4 +13,9 @@ module ErrorHandlerConcern
   def ac_invalid_authenticity_token
     redirect_to '/500'
   end
+
+  def ac_request_forgery_exception
+    flash[:info] = I18n.translate 'session_timeout'
+    redirect_to login_path
+  end
 end
