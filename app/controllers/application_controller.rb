@@ -56,6 +56,10 @@ class ApplicationController < ActionController::Base
   # GET /contato
   def contact
     layout = (logged_in?) ? 'application' : 'public'
+    if logged_in?
+      e = Employee.only(:name).find_by(registry: current_user.registry)
+      params[:name] = e.name
+    end
     render '/contact', layout: layout
   end
 
