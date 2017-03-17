@@ -67,7 +67,7 @@ module LoginConcern
   def _login(user, url = caller_url)
     _save_session user
     Services::Security.audit_login(user, request.remote_ip)
-flash[:info] = 'MALABIBALA'
+
     Rails.logger.info "User '#{session[:user_so][:nickname]}' has just signed in."
     redirect_to url
   end
