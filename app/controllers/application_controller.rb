@@ -1,3 +1,4 @@
+require_dependency 'app_logger'
 require Rails.root.join 'app', 'errors', 'exceptions.rb'
 require Rails.root.join 'app', 'services', 'security_service.rb'
 
@@ -6,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   include LoginConcern
   include ErrorHandlerConcern
+  include AppLogger
 
   before_action :session_expiry, except: [
     :index, :login, :sign_in, :sign_out, :faq, :contact, :send_email,
@@ -111,7 +113,7 @@ class ApplicationController < ActionController::Base
   def activate_user
     user = User.only(:status).find_by(registry: params[:registry])
     if user.status != 'INACTIVE'
-      Rails.logger.warn "User #{params[:registry]} tried activate its account with status #{user.status}"
+      info "User #{params[:registry]} tried to activate its account with status #{user.status}"
       redirect_to home_path
       return
     end

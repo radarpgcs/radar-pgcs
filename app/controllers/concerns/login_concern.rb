@@ -13,12 +13,12 @@ module LoginConcern
   def authenticate_login(uid, pass)
     user = User.where(registry: uid).first
     if user.nil?
-      Rails.logger.info "Login: Unknown user identification #{uid}"
+      info "Login: Unknown user identification #{uid}"
       return
     end
 
     auth_ok = _password_match? user, pass
-    Rails.logger.info "Login: Invalid password to user with identification #{uid}" unless auth_ok
+    info "Login: Invalid password to user with identification #{uid}" unless auth_ok
 
     auth_ok ? user : nil
   end
@@ -61,6 +61,7 @@ module LoginConcern
       _login User.find_by(registry: params[:registry]), home_path
     rescue Exceptions::NotAuthorizedException => ex
       flash[:danger] = ex.message
+      warn ex.message
       @employee = Employee.find_by registry: params[:registry]
       render '/activate_user', layout: 'public'
     end
@@ -73,7 +74,7 @@ module LoginConcern
 
     user.update_attribute('last_login', Time.now)
 
-    Rails.logger.info "User '#{session[:user_so][:nickname]}' has just signed in."
+    info "User '#{session[:user_so][:nickname]}' has just signed in."
     redirect_to url
   end
 
@@ -83,7 +84,7 @@ module LoginConcern
     @current_user = nil
 
     message = (logged_in?) ? "User #{current_user.registry} has just signed out." : 'Session destroyed by expiration.'
-    Rails.logger.info message
+    info message
   end
 
   def _password_match?(user, raw_password)

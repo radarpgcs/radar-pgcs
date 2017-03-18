@@ -1,5 +1,8 @@
+require_dependency 'app_logger'
+
 module Services
   class Security
+    extend AppLogger
 
     HASH_ITERATION = 50
     SALT_NUMBER_SIZE = 45
@@ -41,7 +44,7 @@ module Services
 
         user = User.find_by registry: options[:registry]
         if user.status != 'INACTIVE'
-          Rails.logger.warn "User #{user.registry} tried activate its account with status #{user.status}"
+          warn "User #{user.registry} tried to activate its account with status #{user.status}"
           raise Exceptions::NotAuthorizedException.new(
             I18n.translate('activate_account.invalid_status'))
         end
