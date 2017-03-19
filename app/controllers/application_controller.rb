@@ -132,7 +132,7 @@ class ApplicationController < ActionController::Base
     @menu_header = {
       home_path: home_path,
       menu_items: [
-        { label: t('menu.header.promotion'), path: '#' }
+        { label: t('menu.header.promotion'), path: promotions_path }
       ]
     }
   end

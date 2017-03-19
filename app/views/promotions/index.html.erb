@@ -1,0 +1,111 @@
+<div id="definition" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= image_tag 'promotion.png' %>
+    </div>
+    <div class="col-sm-8 text-justify">
+      <h2><%= t '.title' %></h2>
+      <h4>1. <%= t '.pgcs.title' %></h4>
+      <h5>1.1 <%= t '.pgcs.definition.title' %></h5>
+      <p>
+        <%= t '.pgcs.definition.p1' %>
+      </p>
+      <p>
+        <%= t '.pgcs.definition.p2' %>
+      </p>
+
+      <h4>2. <%= t '.career.title' %></h4>
+      <h5>2.1 <%= t '.career.definition.title' %></h5>
+      <p>
+        <%= t '.career.definition.p1' %>
+      </p>
+
+      <h4>2. <%= t '.pm.title' %></h4>
+      <h5>2.1 <%= t '.pm.definition.title' %></h5>
+      <p>
+        <%= t '.pm.definition.p1' %>
+      </p>
+      <p>
+        <%= t '.pm.definition.p2' %><br/>
+        <%= t '.pm.definition.p3' %><br/>
+        <%= t '.pm.definition.p4' %><br/>
+        <%= t '.pm.definition.p5' %>
+      </p>
+      <p>
+        <%= t '.pm.definition.p6' %>
+      </p>
+
+      <h4>2. <%= t '.pts.title' %></h4>
+      <h5>2.1 <%= t '.pts.definition.title' %></h5>
+      <p>
+        <%= t '.pts.definition.p1' %>
+      </p>
+      <p>
+        <%= t '.pts.definition.p2' %><br/>
+        <%= t '.pts.definition.p3' %><br/>
+        <%= t '.pts.definition.p4' %><br/>
+        <%= t '.pts.definition.p5' %>
+      </p>
+      <p>
+        <%= t '.pts.definition.p6' %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="search" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h4><%= t '.search.title' %></h4>
+      <br/>
+
+      <%= form_tag find_promotions_path, method: :get do %>
+      <div class="row">
+        <div class="col-sm-3">
+          <b><%= t '.search.promotion_type.title' %></b>
+        </div>
+
+        <div class="col-sm-5">
+          <input type="radio" id="promotion-pm" name="promotion" value="pm">
+          <label for="promotion-pm"><%= t '.search.promotion_type.pm' %></label><br/>
+          <input type="radio" id="promotion-pts" name="promotion" value="pts">
+          <label for="promotion-pts"><%= t '.search.promotion_type.pts' %></label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <b><%= t '.search.staff.title' %></b>
+        </div>
+        <div class="col-sm-5">
+          <input type="radio" id="staff-internal" name="staff" value="internal">
+          <label for="staff-internal"><%= t '.search.staff.internal' %></label><br/>
+          <input type="radio" id="staff-external" name="staff" value="external">
+          <label for="staff-external"><%= t '.search.staff.external' %></label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <b><label for="year"><%= t '.search.year' %></label></b>
+        </div>
+        <div class="col-sm-5">
+          <%= select_tag :year, years_for_selection %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5">
+          <input type="submit" value="<%= t '.search.find' %>" class="btn btn-primary"/>
+          <input type="reset" value="<%= t '.search.erase' %>" class="btn btn-primary"/>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-sm-">
+      <%= image_tag 'magnifier.png' %>
+    </div>
+  </div>
+</div>

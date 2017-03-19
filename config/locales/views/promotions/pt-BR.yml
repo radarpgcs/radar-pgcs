@@ -1,0 +1,75 @@
+---
+pt-BR:
+  promotions:
+    index:
+      title: Promoções do PGCS
+      menu:
+        pgcs: PGCS
+        search: Consulta
+      pgcs:
+        title: PGCS
+        definition:
+          title: Definição
+          p1: 'O Plano de Gestão de Carreiras do SERPRO, denominado PGCS, é um
+instrumento de gestão que possibilita identificar o grau de maturidade profissional e
+de desenvolvimento dos empregados, de forma a posicioná-los nas carreiras e
+retribuí-los de forma compatível com o valor agregado à Empresa, observados os
+direcionamentos organizacionais e o contexto do mercado de trabalho.'
+          p2: 'O PGCS estabelece as políticas de gerenciamento de desempenho, de
+encarreiramento profissional e de remuneração, de forma a viabilizar a captação e a
+retenção de profissionais qualificados.'
+      career:
+        title: Encarreiramento profissional
+        definition:
+          title: Definição
+          p1: 'O encarreiramento refere-se à progressão do empregado na carreira, podendo
+ocorrer nas modalidades: Promoção por Mérito e Promoção por Tempo de Serviço.'
+      pm:
+        title: Promoção por Mérito
+        definition:
+          title: Definição
+          p1: 'Promoção por Mérito
+é o deslocamento vertical na tabela salarial, com a
+elevação de 1 (um) ou 2 (dois) níveis, sendo mantida a letra do degrau salarial
+ocupado pelo empregado.'
+          p2: 'São requisitos para habilitação no processo de promoção por mérito:'
+          p3: 'a) Ter obtido Coeficiente de Mérito (CM) igual ou superior ao valor estabelecido pela
+Diretoria, em decisão colegiada, para cada processo.'
+          p4: 'b) Não ter recebido penalidade durante o período avaliado, estabelecido nos
+processos de gerenciamento do desempenho dos empregados; e'
+          p5: 'c) Não ocupar o último nível da carreira e classe que integra.'
+          p6: 'Os empregados habilitados a participar do processo de promoção por mérito
+serão ordenados pelas respectivas chefias diretas e/ou imediatamente superiores,
+sendo promovidos os empregados que, durante o período avaliado, se destacaram
+por agregar maior valor para o alcance dos resultados organizacionais, observada a
+verba destinada ao processo.'
+      pts:
+        title: Promoção por Tempo de Serviço
+        definition:
+          title: Definição
+          p1: 'Promoção por Tempo de Serviço
+é o deslocamento diagonal na tabela
+salarial, com a elevação de 1 (um) degrau salarial e a consequente alteração da
+letra do degrau ocupado pelo empregado.'
+          p2: 'São requisitos para habilitação no processo de promoção por tempo de serviço:'
+          p3: 'a) Ter permanecido no mínimo 2 (dois) anos em efetivo exercício sem receber
+qualquer tipo de promoção;'
+          p4: 'b) Não ter recebido penalidade durante o período avaliado, estabelecido nos
+processos de gerenciamento do desempenho dos empregados.'
+          p5: 'c) Não ocupar o último nível e degrau da carreira e classe que integra.'
+          p6: 'Serão promovidos os empregados que permaneceram maior tempo em
+efetivo exercício no mesmo nível e degrau salarial, observada a verba destinada ao
+processo.'
+      search:
+        title: Consultar promoções
+        promotion_type:
+          title: Tipo de promoção
+          pm: Promoção por Mérito
+          pts: Promoção por Tempo de Serviço
+        staff:
+          title: Quadro
+          internal: Interno
+          external: Externo
+        year: Ano
+        find: Consultar
+        erase: Apagar

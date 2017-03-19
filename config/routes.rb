@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   post '/send_email', to: 'application#send_email', as: 'send_email'
   get '/ativar-conta-usuario/:registry', to: 'application#activate_user', as: 'activate_user'
   post '/activate_user', to: 'application#activate_user_account', as: 'activate_user_account'
+
+  get '/promocoes', to: 'promotions#index', as: 'promotions'
+  get '/pesquisar-promocoes', to: 'promotions#find', as: 'find_promotions'
 end
