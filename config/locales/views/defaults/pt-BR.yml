@@ -15,6 +15,7 @@ pt-BR:
       faq: FAQ
       project_site: Site do projeto
   close: Fechar
+  show: Detalhar
   news:
     title: Notícias
     subtitle: Notas sobre a versão %{version}
@@ -32,3 +33,20 @@ pt-BR:
     errors:
       verification_failed: 'Verificação do reCAPTCHA falhou, favor tentar novamente.'
       recaptcha_unreachable: 'Não foi possível auferir a resposta do reCAPTCHA. Favor tentar novamente.'
+  views:
+    pagination:
+      next: "Próximo &rsaquo;"
+      last: "Último &raquo;"
+      first: "&laquo; Primeiro"
+      previous: "&lsaquo; Anterior"
+      truncate: "&hellip;"
+      empty: Nenhum registro foi encontrado.
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: Nenhum(a) registro encontrado.
+          one: Exibindo&nbsp;<b>1</b>&nbsp;registro.
+          other: Exibindo&nbsp;<b>%{count}</b>&nbsp;registros.
+      more_pages:
+        display_entries: Exibindo registros&nbsp;<b>%{first}&nbsp;-&nbsp;%{last}</b>&nbsp;de um total de&nbsp;<b>%{total}</b>.
