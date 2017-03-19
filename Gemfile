@@ -21,6 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Use reCAPTCHA
 gem 'recaptcha', '~> 4.1.0', require: "recaptcha/rails"
+# Paginator for Ruby web applications
+gem 'kaminari-mongoid', '~> 1.0.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
