@@ -31,7 +31,17 @@ class PromotionsController < ApplicationController
 
   # GET /promocoes/:type/:staff/:year
   def list
+    options = parse_promotions_find_params
+    errors = validate_promotions_find_params options
 
+    unless errors.empty?
+      flash[:danger] = format_errors errors
+      render '/promotions/index'
+      return
+    end
+
+    options = parse_query_params
+    @promotions = Promotion.where(options).count
   end
 
   private
