@@ -1,17 +1,30 @@
 require 'test_helper'
 
 class PromotionsControllerTest < ActionController::TestCase
+  setup do
+    session[:user_so] = User.first
+  end
+
   test 'should not get promotions index page if not authenticated' do
+    session[:user_so] = nil
+
     get :index
     assert_response :success
     assert_template 'login'
   end
 
   test 'should get promotions index page' do
-  	session[:user_so] = User.first
-
-    get :index
+  	get :index
     assert_response :success
     assert_template 'promotions/index'
+  end
+
+  test 'should get finding promotions action' do
+    get :find, params: { type: 'pm', staff: 'internal', year: Time.now.year }
+    assert_response :success
+  end
+
+  test 'should get listing promotions page' do
+    
   end
 end

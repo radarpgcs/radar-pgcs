@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   get '/promocoes', to: 'promotions#index', as: 'promotions'
   get '/pesquisar-promocoes', to: 'promotions#find', as: 'find_promotions'
+  get '/promocoes/:type/:staff/:year', to: 'promotions#list', as: 'list_promotions'
 end

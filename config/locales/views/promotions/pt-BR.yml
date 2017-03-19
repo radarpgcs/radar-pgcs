@@ -73,3 +73,7 @@ processo.'
         year: Ano
         find: Consultar
         erase: Apagar
+        validation:
+          promotion: Tipo de promoção inválido. Esperava Promoção por Mérito ou por Tempo de Serviço.
+          staff: Quadro inválido. Esperava Externo ou Interno.
+          year: Ano inválido. Esperava um ano entre 2009 e o ano corrente.
