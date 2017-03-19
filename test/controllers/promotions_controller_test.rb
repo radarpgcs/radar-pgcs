@@ -21,7 +21,7 @@ class PromotionsControllerTest < ActionController::TestCase
 
   test 'should get finding promotions action' do
     get :find, params: { type: 'pm', staff: 'internal', year: Time.now.year }
-    assert_response :success
+    assert_redirected_to list_promotions_path(type: 'merito', staff: 'interno', year: Time.now.year)
   end
 
   test 'should get listing promotions page' do
