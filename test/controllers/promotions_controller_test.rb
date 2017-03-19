@@ -25,6 +25,7 @@ class PromotionsControllerTest < ActionController::TestCase
   end
 
   test 'should get listing promotions page' do
-    
+    get :list, params: { type: 'merito', staff: 'interno', year: Time.now.year }
+    assert_response :success
   end
 end

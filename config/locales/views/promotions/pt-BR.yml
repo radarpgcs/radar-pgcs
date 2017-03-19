@@ -77,3 +77,14 @@ processo.'
           promotion: Tipo de promoção inválido. Esperava Promoção por Mérito ou por Tempo de Serviço.
           staff: Quadro inválido. Esperava Externo ou Interno.
           year: Ano inválido. Esperava um ano entre 2009 e o ano corrente.
+    list:
+      title: Listagem de promoções
+      type:
+        pm: Promoção por Mérito
+        pts: Promoção por Tempo de Serviço
+      year: Ano
+      staff:
+        external: Quadro externo
+        internal: Quadro interno
+      registry: Matrícula
+      name: Nome
