@@ -39,12 +39,11 @@ pt-BR:
       size: 'Nova senha deve ter mínimo de %{minimum} e máximo de %{maximum} caracteres.'
     invalid_status: É mandatório que a conta esteja inativa para usar esta funcionalidade.
   home:
+    see_more: Ver mais
     promotion:
-      title: Promoções
+      title: Promoções do PGCS
       subtitle: Encontre a lista de promovidos por mérito e tempo de serviço de 2009 até o momento.
-      merit:
-        label: Promoção por Mérito
-        text: Relação de promovidos por mérito dos quadros interno e externo desde 2009.
-      time_service:
-        label: Promoção por Tempo de Serviço
-        text: Relação de promovidos por tempo de serviço dos quadros interno e externo desde 2009.
+      definition: 'O Plano de Gestão de Carreiras do SERPRO, denominado PGCS, é um instrumento de gestão que possibilita identificar o grau de maturidade profissional e de
+desenvolvimento dos empregados, de forma a posicioná-los nas carreiras e retribuí-los de forma compatível com o valor agregado à Empresa, observados os direcionamentos organizacionais e o contexto do mercado de trabalho. O PGCS estabelece as políticas de gerenciamento de desempenho, de
+encarreiramento profissional e de remuneração, de forma a viabilizar a captação e a
+retenção de profissionais qualificados.'

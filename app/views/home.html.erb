@@ -21,13 +21,11 @@
     <div class="col-sm-8">
       <h2><%= t '.promotion.title' %></h2>
       <h4><%= t '.promotion.subtitle' %></h4>
-      <p>
-        <a href="#"><%= t '.promotion.merit.label' %>:</a>
-        <%= t '.promotion.merit.text' %>
+      <p class="text-justify">
+        <%= t '.promotion.definition' %>
       </p>
       <p>
-        <a href="#"><%= t '.promotion.time_service.label' %>:</a>
-        <%= t '.promotion.time_service.text' %>
+        <%= link_to t('.see_more'), promotions_path %> 
       </p>
     </div>
   </div>
