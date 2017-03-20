@@ -53,8 +53,54 @@
   </div>
 </div>
 
-<div id="search" class="container-fluid bg-grey">
+<div id="report" class="container-fluid bg-grey">
   <div class="row">
+    <div class="col-sm-8">
+      <h4><%= t '.report.title' %></h4>
+      <br/>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t '.report.year' %></th>
+            <th colspan="2"><%= t '.report.pm' %></th>
+            <th colspan="2"><%= t '.report.pts' %></th>
+          </tr>
+          <tr>
+            <th></th>
+            <th><%= t '.report.internal' %></th>
+            <th><%= t '.report.external' %></th>
+            <th><%= t '.report.internal' %></th>
+            <th><%= t '.report.external' %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @promotions.each do |year, data| %>
+          <tr>
+            <td><%= year %></td>
+            <td><%= data[:pm][:internal] %></td>
+            <td><%= data[:pm][:external] %></td>
+            <td><%= data[:pts][:internal] %></td>
+            <td><%= data[:pts][:external] %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-2">
+      <%= image_tag 'report.png' %>
+    </div>
+  </div>
+</div>
+
+<div id="search" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <%= image_tag 'magnifier.png' %>
+    </div>
+
     <div class="col-sm-8">
       <h4><%= t '.search.title' %></h4>
       <br/>
@@ -102,10 +148,6 @@
         </div>
       </div>
       <% end %>
-    </div>
-
-    <div class="col-sm-">
-      <%= image_tag 'magnifier.png' %>
     </div>
   </div>
 </div>

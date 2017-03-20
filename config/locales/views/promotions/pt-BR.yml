@@ -5,6 +5,7 @@ pt-BR:
       title: Promoções do PGCS
       menu:
         pgcs: PGCS
+        report: Relatório
         search: Consulta
       pgcs:
         title: PGCS
@@ -60,6 +61,13 @@ processos de gerenciamento do desempenho dos empregados.'
           p6: 'Serão promovidos os empregados que permaneceram maior tempo em
 efetivo exercício no mesmo nível e degrau salarial, observada a verba destinada ao
 processo.'
+      report:
+        title: Relatório de promoções
+        year: Ano
+        pm: Promoção por Mérito
+        pts: Promoção por Tempo de Serviço
+        internal: Interno
+        external: Externo
       search:
         title: Consultar promoções
         promotion_type:

@@ -1,6 +1,7 @@
 require_dependency 'app_logger'
 require Rails.root.join 'app', 'errors', 'exceptions.rb'
 require Rails.root.join 'app', 'services', 'security_service.rb'
+require Rails.root.join 'app', 'services', 'promotions_service.rb'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
