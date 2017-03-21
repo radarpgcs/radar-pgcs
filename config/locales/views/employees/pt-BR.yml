@@ -1,0 +1,21 @@
+---
+pt-BR:
+  employees:
+    star:
+      title: 'Promoção por Mérito (%{year})'
+    thumbs:
+      up: Promovido por mérito
+      down: Promovido por tempo de serviço
+      banana: Sem promoção
+    show:
+      title: Dados do empregado
+      registry: Matrícula
+      name: Nome
+      employment: Cargo
+      category: Classe
+      reference: Referência
+      regional: Regional
+      department: Lotação
+      hiring_date: Data da contratação
+      payment: Remuneração
+      timeline: Linha do tempo das promoções

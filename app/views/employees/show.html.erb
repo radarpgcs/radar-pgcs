@@ -1,0 +1,105 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3><%= t '.title' %></h3>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-md-2">
+		<b><%= t '.registry' %></b>
+	</div>
+	<div class="col-md-1">
+		<%= format_registry @employee %>
+	</div>
+	<div class="col-md-9">
+		<%= stars @employee, 5 %>
+	</div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.name' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= @employee.name %>
+  </div>
+</div>
+
+<br/>
+
+<% unless @employee.employment.to_s.empty? %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.employment' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= @employee.employment %>
+  </div>
+</div>
+<% end %>
+
+<% unless @employee.category.to_s.empty? %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.category' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= @employee.category %>
+  </div>
+</div>
+<% end %>
+
+<% unless @employee.reference.to_s.empty? %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.reference' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= @employee.reference %>
+  </div>
+</div>
+<% end %>
+
+<br/>
+
+<% unless @employee.regional.to_s.empty? %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.regional' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= format_regional @employee %>
+  </div>
+</div>
+<% end %>
+
+<% unless @employee.department.to_s.empty? %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.department' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= @employee.department %>
+  </div>
+</div>
+<% end %>
+
+<% unless @employee.hiring_date.nil? %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.hiring_date' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= l @employee.hiring_date %>
+  </div>
+</div>
+<% end %>
+
+<hr/>
+
+<h4><%= t '.timeline' %></h4>
+<br/>
+
+<%= promotions_board @employee %>
+</div>

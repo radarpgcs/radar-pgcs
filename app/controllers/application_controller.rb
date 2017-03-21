@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     :login, :sign_in, :sign_out, :activate_user_account
   ]
 
-  rescue_from Mongoid::Errors::DocumentNotFound, with: :mid_record_not_found
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :mid_document_not_found
   rescue_from Exceptions::NotAuthorizedException, with: :e_not_authorized_exception
   rescue_from ActionController::InvalidAuthenticityToken, with: :ac_invalid_authenticity_token
   rescue_from ActionController::InvalidAuthenticityToken, with: :ac_request_forgery_exception

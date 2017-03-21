@@ -24,7 +24,7 @@
         <tr>
           <td width="10%"><%= promotion.employee.registry %></td>
           <td width="80%"><%= promotion.employee.name %></td>
-          <td><%= link_to t('show'), '#', class: "btn btn-primary", role: "button" %></td>
+          <td><%= link_to t('show'), show_employee_path(registry: promotion.employee.registry), class: "btn btn-primary", role: "button" %></td>
         </tr>
       <% end %>
     </tbody>
