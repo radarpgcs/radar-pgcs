@@ -25,3 +25,10 @@ pt-BR:
       payment: Remuneração
       eventual: Eventual
       timeline: Linha do tempo das promoções
+    payment_history:
+      title: Histórico de remunerações
+      registry: Matrícula
+      name: Nome
+      reference_date: Data de referência
+      payment: Remuneração
+      eventual: Eventual

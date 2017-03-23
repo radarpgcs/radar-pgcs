@@ -1,0 +1,66 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3><%= t '.title' %></h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.registry' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= format_registry @employee %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.name' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= @employee.name %>
+  </div>
+</div>
+
+<br/>
+
+<% if @payments.empty? %>
+<i><%= t 'views.pagination.empty' %></i>
+
+<br/><br/>
+<% end %>
+
+<% @payments.each do |payment| %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.reference_date' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= "#{payment.month}/#{payment.year}" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.payment' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= number_to_currency payment.total %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.eventual' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= number_to_currency payment.eventual %>
+  </div>
+</div>
+
+<br/>
+<% end %>
+
+<%= link_to t('back'), show_employee_path(registry: params[:registry]), class: 'btn btn-info' %>
+</div>

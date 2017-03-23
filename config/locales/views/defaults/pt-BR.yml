@@ -16,6 +16,7 @@ pt-BR:
       project_site: Site do projeto
   close: Fechar
   show: Detalhar
+  back: Voltar
   news:
     title: Notícias
     subtitle: Notas sobre a versão %{version}

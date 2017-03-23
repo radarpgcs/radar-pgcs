@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/promocoes/:type/:staff/:year', to: 'promotions#list', as: 'list_promotions'
 
   get '/empregados/:registry', to: 'employees#show', as: 'show_employee'
+  get '/empregados/:registry/historico-remuneracoes', to: 'employees#payment_history', as: 'payment_history'
 end

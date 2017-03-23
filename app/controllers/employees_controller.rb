@@ -7,6 +7,12 @@ class EmployeesController < ApplicationController
     @payment = @employee.payments.last
 	end
 
+  # GET /empregados/:registry/historico-remuneracoes
+  def payment_history
+    @employee = Employee.only(:id, :registry, :name).find_by registry: params[:registry]
+    @payments = Payment.where(employee: @employee)
+  end
+
 	private
   def set_menu_header
     @menu_header = {

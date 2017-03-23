@@ -119,7 +119,7 @@
     <%= "#{@payment.month}/#{@payment.year}" %>
   </div>
   <div class="col-md-9">
-    <%= link_to t('.payment_history'), '#' %>
+    <%= link_to t('.payment_history'), payment_history_path(registry: @employee.registry) %>
   </div>
 </div>
 
