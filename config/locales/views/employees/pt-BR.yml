@@ -8,7 +8,10 @@ pt-BR:
       down: Promovido por tempo de serviço
       banana: Sem promoção
     show:
-      title: Dados do empregado
+      title: Perfil do empregado
+      subtitle:
+        functional: Dados funcionais
+        financial: Dados financeiros
       registry: Matrícula
       name: Nome
       employment: Cargo
@@ -17,5 +20,8 @@ pt-BR:
       regional: Regional
       department: Lotação
       hiring_date: Data da contratação
+      reference_date: Data de referência
+      payment_history: Histórico de remunerações
       payment: Remuneração
+      eventual: Eventual
       timeline: Linha do tempo das promoções

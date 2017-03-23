@@ -4,6 +4,7 @@ class EmployeesController < ApplicationController
 	# GET /empregados/:registry
 	def show
 		@employee = Employee.find_by registry: params[:registry]
+    @payment = @employee.payments.last
 	end
 
 	private

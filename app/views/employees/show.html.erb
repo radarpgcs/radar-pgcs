@@ -6,6 +6,12 @@
 </div>
 
 <div class="row">
+  <div class="col-md-12">
+    <h4><%= t '.subtitle.functional' %></h4>
+  </div>
+</div>
+
+<div class="row">
 	<div class="col-md-2">
 		<b><%= t '.registry' %></b>
 	</div>
@@ -92,6 +98,46 @@
   </div>
   <div class="col-md-10">
     <%= l @employee.hiring_date %>
+  </div>
+</div>
+<% end %>
+
+<br/>
+
+<div class="row">
+  <div class="col-md-12">
+    <h4><%= t '.subtitle.financial' %></h4>
+  </div>
+</div>
+
+<% if @payment %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.reference_date' %></b>
+  </div>
+  <div class="col-md-1">
+    <%= "#{@payment.month}/#{@payment.year}" %>
+  </div>
+  <div class="col-md-9">
+    <%= link_to t('.payment_history'), '#' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.payment' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= number_to_currency @payment.total %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.eventual' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= number_to_currency @payment.eventual %>
   </div>
 </div>
 <% end %>
