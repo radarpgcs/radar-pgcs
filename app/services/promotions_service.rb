@@ -7,7 +7,7 @@ module Services
         return @@promotion_totals if @@promotion_totals
 
         @@promotion_totals = {}
-        (2009..Time.now.year).each do |year|
+        (2009..ENV['LAST_PROMOTION_YEAR'].to_i).each do |year|
           @@promotion_totals[year] = { pm: {}, pts: {} }
           @@promotion_totals[year][:pm][:external] = Promotion.where(
             type: 'PM', external_staff: true, year: year).count
