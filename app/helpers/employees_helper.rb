@@ -78,7 +78,7 @@ module EmployeesHelper
   def _build_promotion_divs(employee)
     promotions = {}
     employee.promotions.each { |p| promotions[p.year] = p.type }
-    first_year = (employee.hiring_date) ? employee.hiring_date.year : ENV['FIRST_PROMOTION_YEAR'].to_i
+    first_year = _first_year employee
     last_year = ENV['LAST_PROMOTION_YEAR'].to_i
 
     divs = []
@@ -117,5 +117,17 @@ module EmployeesHelper
     div = "<div class=\"col-md-1\" style=\"border: solid;\">"
     div << inner_html
     div << '</div>'
+  end
+
+  def _first_year(employee)
+    first_year = nil
+    if employee.hiring_date
+      if employee.hiring_date.year >= ENV['FIRST_PROMOTION_YEAR'].to_i
+        first_year = employee.hiring_date.year
+      end
+    end
+
+    return ENV['FIRST_PROMOTION_YEAR'].to_i unless first_year
+    first_year
   end
 end
