@@ -1,10 +1,14 @@
 class EmployeesController < ApplicationController
+  include PromotionsConcern
+  
 	before_action :session_expiry, :set_menu_header
 
 	# GET /empregados/:registry
 	def show
 		@employee = Employee.find_by registry: params[:registry]
     @payment = @employee.payments.last
+
+    save_view @employee
 	end
 
   # GET /empregados/:registry/historico-remuneracoes
