@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+procname = ARGV.first
+unless procname
+  puts 'You must pass the procname as parameter.'
+  exit 1
+end
+
+puts "Seak proccess named #{procname}"
+
+proctable = `ps xau | grep #{procname}`.to_s.split("\n")
+pid = nil
+proctable.each do |line|
+  if /[\s\/]+caravela[\w\d.]+$/.match line
+    captures = /\A\d+\s+(\d+)/.match(line).captures
+    pid = captures.first if captures
+    break
+  end
+end
+
+if pid
+  puts "Trying to kill pid #{pid}"
+  `kill -9 #{pid}`
+  if $?.to_i == 0
+    puts 'Proccess killed'
+  else
+    puts 'Could not kill proccess'
+  end
+else
+  puts "None proccess found with name #{procname}"
+end
