@@ -10,6 +10,7 @@ class Payment
   field :month, type: Integer
   field :total, type: Float
   field :eventual, type: Float
+  field :net_salary, type: Float
 
   belongs_to :employee
 
@@ -22,7 +23,7 @@ class Payment
   	less_than_or_equal_to: MAX_MONTH
   }
   validates :total, presence: true, numericality: {
-  	only_integer: false, greater_than: 0
+  	only_integer: false
   }
 
   def ==(obj)

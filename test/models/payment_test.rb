@@ -202,19 +202,4 @@ class PaymentTest < ActiveSupport::TestCase
     assert_equal 1, errors[:total].size
     assert_equal 'não é um número', errors[:total].first
   end
-
-  test 'should ensure that total is > 0' do
-    payment = Payment.new do |p|
-      p.employee = Employee.new
-      p.year = Time.now.year
-      p.month = Time.now.month
-      p.total = 0
-    end
-
-    assert payment.invalid?
-
-    errors = payment.errors.messages
-    assert_equal 1, errors[:total].size
-    assert_equal 'deve ser maior que 0', errors[:total].first
-  end
 end
