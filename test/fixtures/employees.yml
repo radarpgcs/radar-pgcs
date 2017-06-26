@@ -9,6 +9,7 @@ one:
   department: SUPCD/CDBSA/CDSMB
   regional: BSA
   hiring_date: 1832-03-22
+  working_hours: '08:00'
   active: true
 
 two:
@@ -20,4 +21,5 @@ two:
   department: SUPOP/OPCTA/OPGER
   regional: CTA
   hiring_date: 1881-02-09
+  working_hours: '06:00'
   active: true

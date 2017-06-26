@@ -12,6 +12,7 @@ class Employee
   field :regional, type: String
   field :hiring_date, type: Date
   field :active, type: Mongoid::Boolean
+  field :working_hours, type: String
   field :eventual_gfe, type: Float
   field :views, type: Integer
   field :tags, type: Array
