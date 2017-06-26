@@ -8,17 +8,9 @@ end
 
 puts "Seak proccess named #{procname}"
 
-proctable = `ps xau | grep #{procname}`.to_s.split("\n")
-pid = nil
-proctable.each do |line|
-  if /[\s\/]+caravela[\w\d.]+$/.match line
-    captures = /\A\d+\s+(\d+)/.match(line).captures
-    pid = captures.first if captures
-    break
-  end
-end
+pid = `pidof #{procname}`.to_i
 
-if pid
+if pid > 0
   puts "Trying to kill pid #{pid}"
   `kill -9 #{pid}`
   if $?.to_i == 0
