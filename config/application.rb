@@ -11,6 +11,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
+require "i18n/backend/fallbacks"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -26,6 +27,9 @@ module RadarPgcs
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'pt-BR'
     I18n.enforce_available_locales = false
+
+    I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+    config.i18n.fallbacks = { 'pt' => 'en' }
 
     # Load project specific environment variables
     ENV['APP_VERSION'] = '0.1.0'
