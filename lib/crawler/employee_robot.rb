@@ -75,7 +75,17 @@ module Crawler
       hash = {}
       hash[:ano] = time.year
       hash[:mes] = time.month
-      hash[:bruto] = find(:xpath, "//tr[@class='remuneracao_valor']/td[2]").text.gsub(/[A-Z\s$]/, '')
+
+      xpath = "//tr[@class='remuneracao_valor']/td[text() = ' - Remuneração básica bruta']/../td[2]"
+      unless has_xpath? xpath
+        puts "WARNING: Could not find any financial data!"
+        return { remuneracao: hash }
+      end
+      
+      hash[:bruto] = find(:xpath, "//tr[@class='remuneracao_valor']/td[text() = ' - Remuneração básica bruta']/../td[2]").text.gsub(/[A-Z\s$]/, '')
+
+      xpath = "//tr[@class='remuneracao_valor']/td[text() = ' - Outras remunerações eventuais']/../td[2]"
+      hash[:eventual] = find(:xpath, xpath).text.gsub(/[A-Z\s$]/, '') if has_xpath? xpath
       hash[:liquido] = find(:xpath, "//tr/td[@class='liquido'][2]").text.gsub(/[A-Z\s$]/, '')
       
       { remuneracao: hash }
