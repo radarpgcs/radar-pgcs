@@ -67,6 +67,17 @@
 </div>
 <% end %>
 
+<% unless @employee.working_hours.to_s.empty? %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.working_hours' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= @employee.working_hours %>
+  </div>
+</div>
+<% end %>
+
 <br/>
 
 <% unless @employee.regional.to_s.empty? %>
