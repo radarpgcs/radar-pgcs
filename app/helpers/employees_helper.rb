@@ -74,6 +74,11 @@ module EmployeesHelper
     container.html_safe
   end
 
+  def payment_reference(payment)
+    month = '0'<<(payment.month.to_s).sub(/\A0{2}/, '0')
+    "#{month}/#{payment.year}"
+  end
+
   private
   def _build_promotion_divs(employee)
     promotions = {}

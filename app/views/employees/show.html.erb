@@ -116,7 +116,7 @@
     <b><%= t '.reference_date' %></b>
   </div>
   <div class="col-md-1">
-    <%= "#{@payment.month}/#{@payment.year}" %>
+    <%= payment_reference @payment %>
   </div>
   <div class="col-md-9">
     <%= link_to t('.payment_history'), payment_history_path(registry: @employee.registry) %>
