@@ -16,9 +16,7 @@ class PromotionsController < ApplicationController
 
     unless errors.empty?
       flash[:danger] = format_errors errors
-      _build_home_menu_header
-      @promotions = Services::Promotions.get_promotion_totals
-      render '/promotions/index'
+      redirect_to promotions_path
       return
     end
 

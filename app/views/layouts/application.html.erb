@@ -20,7 +20,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <b><%= t "alert.title.#{key}" %></b>
 
-        <p id="p_<%= key %>"><%= message %></p>
+        <p id="p_<%= key %>"><%= message.html_safe %></p>
       </div>
     </div>
   <% end %>
