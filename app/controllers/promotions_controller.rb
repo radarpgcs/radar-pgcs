@@ -37,7 +37,7 @@ class PromotionsController < ApplicationController
 
     flash.clear
     @options = parse_query_params
-    @promotions = Promotion.where(@options).page(params[:page])
+    @promotions = Promotion.where(@options).order(employee: :asc).page(params[:page])
   end
 
   private
