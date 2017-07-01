@@ -33,7 +33,7 @@ module EmployeesHelper
     return unless employee
 
     employee = Employee.find_by(registry: employee) if employee.is_a? String
-    proms = employee.promotions.select { |p| p.type == 'PM' }
+    proms = employee.promotions.order(year: :asc).select { |p| p.type == 'PM' }
     count = 0
 
     proms.collect do |p|
