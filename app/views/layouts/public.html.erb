@@ -11,9 +11,7 @@
 </head>
 
 <body id="home">
-  <%= build_menu_header home_path: home_path, menu_items: [
-    { label: t('menu.header.promotion'), path: '#promotion' }
-  ] %>
+  <%= build_menu_header home_path: home_path, menu_items: [] %>
 
   <div class="container">
   <% flash.each do |key, message| %>
