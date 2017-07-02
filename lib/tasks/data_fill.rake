@@ -91,6 +91,22 @@ namespace :db do
       end
     end
 
+    desc 'Fill gfe_tables collection'
+    task gfe_tables: :environment do
+      GfeTable.delete_all
+      file = Rails.root.join('db', "dbfiles", "gfe-table-act-2015-2016-db.yaml")
+      YAML.load_file(file).each do |act, table|
+        table.each do |employment, levels|
+          levels.each do |level, value|
+            GfeTable.create!(
+              act: act, employment: employment,
+              level: level, value: value
+            )
+          end
+        end
+      end
+    end
+
     def parse_float(value)
       return unless value
       return value if value.is_a? Float
