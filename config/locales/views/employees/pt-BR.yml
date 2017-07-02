@@ -23,8 +23,9 @@ pt-BR:
       hiring_date: Data da contratação
       reference_date: Data de referência
       payment_history: Histórico de remunerações
-      payment: Remuneração
-      eventual: Eventual
+      payment_total: Remuneração
+      payment_net: Líquido
+      payment_eventual: Eventual
       timeline: Linha do tempo das promoções
     payment_history:
       title: Histórico de remunerações

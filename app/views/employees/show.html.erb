@@ -136,21 +136,34 @@
 
 <div class="row">
   <div class="col-md-2">
-    <b><%= t '.payment' %></b>
+    <b><%= t '.payment_total' %></b>
   </div>
   <div class="col-md-10">
     <%= number_to_currency @payment.total %>
   </div>
 </div>
 
+<% if @payment.eventual %>
 <div class="row">
   <div class="col-md-2">
-    <b><%= t '.eventual' %></b>
+    <b><%= t '.payment_eventual' %></b>
   </div>
   <div class="col-md-10">
     <%= number_to_currency @payment.eventual %>
   </div>
 </div>
+<% end %>
+
+<% if @payment.net_salary %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.payment_net' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= number_to_currency @payment.net_salary %>
+  </div>
+</div>
+<% end %>
 <% end %>
 
 <hr/>
