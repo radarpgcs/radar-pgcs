@@ -52,8 +52,9 @@ namespace :db do
         rem = fields[:remuneracao]
         if rem && rem[:bruto]
           p = Payment.new(
-            year: rem[:ano], month: rem[:mes], total: rem[:bruto],
-            eventual: rem[:eventual], net_salary: rem[:liquido], employee: e
+            year: rem[:ano], month: rem[:mes], total: parse_float(rem[:bruto]),
+            eventual: parse_float(rem[:eventual]), net_salary: parse_float(rem[:liquido]),
+            employee: e
           )
           p.save!
         end
@@ -88,6 +89,14 @@ namespace :db do
           end
         end
       end
+    end
+
+    def parse_float(value)
+      return unless value
+      return value if value.is_a? Float
+      return value.to_s.to_f if value.to_s.match /\A\d+\.\d{2}\z/
+
+      value.to_s.sub('.', '').sub(',', '.').to_f
     end
   end
 end
