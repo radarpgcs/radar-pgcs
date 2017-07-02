@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  act: MyString
+  employment: MyString
+  level: 1
+  value: 1.5
+
+two:
+  act: MyString
+  employment: MyString
+  level: 1
+  value: 1.5
