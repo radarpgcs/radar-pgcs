@@ -1,0 +1,2 @@
+class ExtractController < ApplicationController
+end
