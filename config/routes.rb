@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   get '/empregados/:registry', to: 'employees#show', as: 'show_employee'
   get '/empregados/:registry/historico-remuneracoes', to: 'employees#payment_history', as: 'payment_history'
+
+  get '/dados-consolidados/tabela-gfe', to: 'extract#gfe_table', as: 'gfe_table'
 end
