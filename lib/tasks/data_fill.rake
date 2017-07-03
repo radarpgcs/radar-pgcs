@@ -95,6 +95,7 @@ namespace :db do
     task gfe_tables: :environment do
       GfeTable.delete_all
       file = Rails.root.join('db', "dbfiles", "gfe-table-act-2015-2016-db.yaml")
+      puts "Reading file #{file}"
       YAML.load_file(file).each do |act, table|
         table.each do |employment, levels|
           levels.each do |level, value|
@@ -103,6 +104,18 @@ namespace :db do
               level: level, value: value
             )
           end
+        end
+      end
+    end
+
+    desc 'Fill salary_scales collection'
+    task salary_scales: :environment do
+      SalaryScale.delete_all
+      file = Rails.root.join('db', "dbfiles", "salary-scale-act-2015-2016-db.yaml")
+      puts "Reading file #{file}"
+      YAML.load_file(file).each do |act, table|
+        table.each do |scale, steps|
+          SalaryScale.create!(act: act, scale: scale, step_a: steps['A'], step_b: steps['B'])
         end
       end
     end
