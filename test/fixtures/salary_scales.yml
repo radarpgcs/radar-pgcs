@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  act: MyString
+  scale: MyString
+  step_a: 1.5
+  step_b: 1.5
+
+two:
+  act: MyString
+  scale: MyString
+  step_a: 1.5
+  step_b: 1.5
