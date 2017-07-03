@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  include PromotionsConcern
+  include EmployeesConcern
   
 	before_action :session_expiry, :set_menu_header
 
