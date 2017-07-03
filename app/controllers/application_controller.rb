@@ -6,6 +6,7 @@ require Rails.root.join 'app', 'services', 'promotions_service.rb'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  include ApplicationConcern
   include LoginConcern
   include ErrorHandlerConcern
   include AppLogger
