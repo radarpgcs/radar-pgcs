@@ -7,12 +7,30 @@ namespace :act do
       percentage = ENV['PERCENTAGE'].sub(',', '.').to_f
       last_act = get_last_act
 
-      puts "Generating new GFE table about last ACT: #{last_act}"
+      puts "Generating new GFE table about the last ACT: #{last_act}"
       GfeTable.where(act: last_act).each do |gfe|
         new_value = add_percentual gfe.value, percentage
         GfeTable.create!(
           act: ENV['ACT'], employment: gfe.employment,
           level: gfe.level, value: new_value
+        )
+      end
+    end
+
+    desc 'Calculate and generate salary scale for new ACT'
+    task salary: :environment do
+      _validate
+      percentage = ENV['PERCENTAGE'].sub(',', '.').to_f
+      last_act = get_last_act
+
+      puts "Generating new salary scale about the last ACT: #{last_act}"
+      SalaryScale.where(act: last_act).each do |scale|
+        new_step_a = add_percentual scale.step_a, percentage
+        new_step_b = add_percentual scale.step_b, percentage
+
+        SalaryScale.create!(
+          act: ENV['ACT'], scale: scale.scale,
+          step_a: new_step_a, step_b: new_step_b
         )
       end
     end
