@@ -79,6 +79,47 @@ module EmployeesHelper
     "#{month}/#{payment.year}"
   end
 
+  def estimate_gfe(employee)
+    r = employee.net_salary
+    rbs = base_salary employee
+    aqu = _additional_by_qualification(employee, rbs)
+    anu = _additional_by_year(employee, rbs)
+
+    gfe = ((r - rbs) - (aqu + anu))
+  end
+
+  def base_salary(employee)
+    return unless employee.reference
+    
+    reference = /\A(\d{3}-[0-9E]{1})([AB]{1})\z/.match(employee.reference)
+    base_reference = reference.captures.first
+    step = reference.captures.last
+    last_year = 0
+    scale = nil
+
+    SalaryScale.where(scale: base_reference, act: ENV['LAST_ACT']).select do |s|
+      year = /\A\d{4}-(\d{4})\z/.match(s.act).captures.first.to_i
+      last_year = year
+      if year > last_year
+        last_year = year
+        scale = s
+      end
+    end
+
+    (step.upcase == 'A') ? scale.step_a : scale.step_b
+  end
+
+  def get_last_act
+    last_year = 0
+    last_act = nil
+    GfeTable.only(:act).distinct(:act).each do |act|
+      year = /\A\d+-(\d+)\z/.match(act).captures.first.to_i
+      last_act = act if year > last_year
+    end
+
+    last_act
+  end
+
   private
   def _build_promotion_divs(employee)
     promotions = {}
@@ -134,5 +175,50 @@ module EmployeesHelper
 
     return ENV['FIRST_PROMOTION_YEAR'].to_i unless first_year
     first_year
+  end
+
+  def _additional_by_qualification(employee, base_salary)
+    return unless employee.category
+    category = employee.category.sub ' - PGCS', ''
+
+    percentual = case category
+      when 'CLASSE 1' then 15
+      when 'CLASSE 2' then 20
+      when 'CLASSE 3' then 25
+    end
+
+    base_salary + (base_salary * percentual / 100)
+  end
+
+  def _additional_by_year(employee, base_salary)
+    return unless employee.hiring_date
+
+    years = _count_working_years employee
+    additional = base_salary.dup
+
+    years.times { additional += (base_salary * 1 / 100) }
+    additional
+  end
+
+  def _count_working_years(employee)
+    return unless employee.hiring_date
+
+    today = Time.now
+    in_date = employee.hiring_date
+    years = 0
+
+    (in_date.year..today.year).each do |year|
+      if year < today.year
+        years += 1
+      else
+        if employee.in_date.month > today.month
+          years += 1
+        elsif (employee.in_date.month == today.month) && (employee.in_date.day >= today.day)
+          years += 1
+        end
+      end
+    end
+
+    years
   end
 end
