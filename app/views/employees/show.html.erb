@@ -164,6 +164,29 @@
   </div>
 </div>
 <% end %>
+
+<% @employee_gfe = estimate_gfe @employee %>
+<% if @employee_gfe %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.estimated_gfe' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= number_to_currency @employee_gfe.level %>
+  </div>
+</div>
+<% end %>
+
+<% if @employee_gfe %>
+<div class="row">
+  <div class="col-md-2">
+    <b><%= t '.estimated_gfe' %></b>
+  </div>
+  <div class="col-md-10">
+    <%= number_to_currency @employee_gfe.value %>
+  </div>
+</div>
+<% end %>
 <% end %>
 
 <hr/>

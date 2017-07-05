@@ -80,6 +80,8 @@ module EmployeesHelper
   end
 
   def estimate_gfe(employee)
+    return unless employee.employment
+    
     gfe = _calculate_gfe employee
     acceptable_diff = 10_000_000
     estimated_gfe = nil
