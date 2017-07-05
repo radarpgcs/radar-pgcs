@@ -30,9 +30,5 @@ module RadarPgcs
 
     I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
     config.i18n.fallbacks = { 'pt' => 'en' }
-
-    # Load project specific environment variables
-    ENV['APP_VERSION'] = '0.1.0'
-    ENV['PROJECT_SOURCE_URL'] = 'https://github.com/radarpgcs/radar-pgcs'
   end
 end
