@@ -80,12 +80,20 @@ module EmployeesHelper
   end
 
   def estimate_gfe(employee)
-    r = employee.net_salary
-    rbs = base_salary employee
-    aqu = _additional_by_qualification(employee, rbs)
-    anu = _additional_by_year(employee, rbs)
+    gfe = _calculate_gfe employee
+    acceptable_diff = 10_000_000
+    estimated_gfe = nil
 
-    gfe = ((r - rbs) - (aqu + anu))
+    _find_next_gfes(employee, gfe).each do |g|
+      diff = (gfe - g).abs
+      acceptable_diff = diff
+      if diff < acceptable_diff
+        acceptable_diff = diff
+        estimated_gfe = g
+      end
+    end
+
+    estimated_gfe
   end
 
   def base_salary(employee)
@@ -96,8 +104,9 @@ module EmployeesHelper
     step = reference.captures.last
     last_year = 0
     scale = nil
+    current_act = Rails.configuration.radarpgcs[:current_act]
 
-    SalaryScale.where(scale: base_reference, act: ENV['LAST_ACT']).select do |s|
+    SalaryScale.where(scale: base_reference, act: current_act).select do |s|
       year = /\A\d{4}-(\d{4})\z/.match(s.act).captures.first.to_i
       last_year = year
       if year > last_year
@@ -107,17 +116,6 @@ module EmployeesHelper
     end
 
     (step.upcase == 'A') ? scale.step_a : scale.step_b
-  end
-
-  def get_last_act
-    last_year = 0
-    last_act = nil
-    GfeTable.only(:act).distinct(:act).each do |act|
-      year = /\A\d+-(\d+)\z/.match(act).captures.first.to_i
-      last_act = act if year > last_year
-    end
-
-    last_act
   end
 
   private
@@ -175,6 +173,28 @@ module EmployeesHelper
 
     return ENV['FIRST_PROMOTION_YEAR'].to_i unless first_year
     first_year
+  end
+
+  def _calculate_gfe(employee)
+    r = employee.net_salary
+    rbs = base_salary employee
+    aqu = _additional_by_qualification(employee, rbs)
+    anu = _additional_by_year(employee, rbs)
+
+    ((r - rbs) - (aqu + anu))
+  end
+
+  def _find_next_gfes(employee, gfe)
+    lesser = GfeTable.where(
+      act: Rails.configuration.radarpgcs[:current_act],
+      employment: employee.employment, value.lte: gfe
+    ).limit(2)
+    greater = GfeTable.where(
+      act: Rails.configuration.radarpgcs[:current_act],
+      employment: employee.employment, value.gte: gfe
+    ).limit(2)
+
+    greater.merge lesser
   end
 
   def _additional_by_qualification(employee, base_salary)
