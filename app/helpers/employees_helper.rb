@@ -178,7 +178,7 @@ module EmployeesHelper
   end
 
   def _calculate_gfe(employee)
-    r = employee.net_salary
+    r = employee.payments.last.net_salary
     rbs = base_salary employee
     aqu = _additional_by_qualification(employee, rbs)
     anu = _additional_by_year(employee, rbs)
