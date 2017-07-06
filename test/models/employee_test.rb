@@ -99,10 +99,9 @@ class EmployeeTest < ActiveSupport::TestCase
   end
 
   test 'should create an employee' do
-  	Employee.delete_all
-  	expected = 1
+  	expected = Employee.count + 1
   	
-    Employee.create!(registry: 12345, name: 'Goethe', active: true)
+    Employee.create!(registry: 55874632, name: 'Delete me', active: false)
     assert_equal expected, Employee.count
   end
 end
