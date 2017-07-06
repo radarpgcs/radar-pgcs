@@ -1,9 +1,10 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['ADMIN_EMAIL']
+  admin_email = Rails.configuration.radarpgcs[:admin_email]
+  default from: admin_email
   layout 'mailer'
 
   def send_contact_email(params)
     @params = params
-    mail to: ENV['ADMIN_EMAIL'], subject: params[:subject]
+    mail to: admin_email, subject: params[:subject]
   end
 end

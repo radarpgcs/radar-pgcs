@@ -125,7 +125,7 @@ module EmployeesHelper
     promotions = {}
     employee.promotions.each { |p| promotions[p.year] = p.type }
     first_year = _first_year employee
-    last_year = ENV['LAST_PROMOTION_YEAR'].to_i
+    last_year = Rails.configuration.radarpgcs[:last_promotion_year]
 
     divs = []
     (first_year..last_year).each do |year|
@@ -166,14 +166,15 @@ module EmployeesHelper
   end
 
   def _first_year(employee)
+    global_first_year = Rails.configuration.radarpgcs[:first_promotion_year]
     first_year = nil
     if employee.hiring_date
-      if employee.hiring_date.year >= ENV['FIRST_PROMOTION_YEAR'].to_i
+      if employee.hiring_date.year >= global_first_year
         first_year = employee.hiring_date.year
       end
     end
 
-    return ENV['FIRST_PROMOTION_YEAR'].to_i unless first_year
+    return global_first_year unless first_year
     first_year
   end
 
