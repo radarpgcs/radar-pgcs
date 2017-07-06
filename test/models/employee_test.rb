@@ -100,8 +100,9 @@ class EmployeeTest < ActiveSupport::TestCase
 
   test 'should create an employee' do
   	expected = Employee.count + 1
-  	
-    Employee.create!(registry: 55874632, name: 'Delete me', active: false)
+  	registry = (Employee.last.registry + 1)
+    
+    Employee.create!(registry: registry, name: 'Delete me', active: false)
     assert_equal expected, Employee.count
   end
 end
