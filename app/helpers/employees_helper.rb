@@ -189,11 +189,11 @@ module EmployeesHelper
   def _find_next_gfes(employee, gfe)
     lesser = GfeTable.where(
       act: Rails.configuration.radarpgcs[:current_act],
-      employment: employee.employment, value.lte: gfe
+      employment: employee.employment, 'value.lte' => gfe
     ).limit(2)
     greater = GfeTable.where(
       act: Rails.configuration.radarpgcs[:current_act],
-      employment: employee.employment, value.gte: gfe
+      employment: employee.employment, 'value.gte' => gfe
     ).limit(2)
 
     greater.merge lesser
