@@ -6,8 +6,10 @@ module Services
       def get_promotion_totals
         return @@promotion_totals if @@promotion_totals
 
+        last_year = Rails.configuration.radarpgcs[:last_promotion_year]
         @@promotion_totals = {}
-        (2009..ENV['LAST_PROMOTION_YEAR'].to_i).each do |year|
+        
+        (2009..last_year.to_i).each do |year|
           @@promotion_totals[year] = { pm: {}, pts: {} }
           @@promotion_totals[year][:pm][:external] = Promotion.where(
             type: 'PM', external_staff: true, year: year).count
