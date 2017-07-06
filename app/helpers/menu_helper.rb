@@ -120,7 +120,7 @@ module MenuHelper
 
     link = '<a href="javascript: void(0)" data-toggle="modal" data-target="#modalVersionMessage" '
     link << 'onclick="showModalNews()" class="nav-link">'
-    link << ENV['APP_VERSION']
+    link << Rails.configuration.radarpgcs[:version]
     link << '</a>'
 
     menu << link

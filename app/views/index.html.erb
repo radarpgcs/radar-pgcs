@@ -22,7 +22,7 @@
                 <%= t '.title' %>
                 <%= image_tag 'satellite-dish-32.png' %>
               </h2>
-              <h4><%= t '.version' %> <%= ENV['APP_VERSION'] %></h4>
+              <h4><%= t '.version' %> <%= Rails.configuration.radarpgcs[:version] %></h4>
               <%= image_tag 'radar-spider_man.gif', :width => 200 %>
             </div>
           </div>
@@ -46,7 +46,7 @@
     { label: t('menu.footer.home'), path: home_path },
     { label: t('menu.footer.contact'), path: contact_path },
     { label: t('menu.footer.faq'), path: faq_path },
-    { label: t('menu.footer.project_site'), path: ENV['PROJECT_SOURCE_URL'] }
+    { label: t('menu.footer.project_site'), path: Rails.configuration.radarpgcs[:scm_url] }
   ]%>
 </body>
 </html>

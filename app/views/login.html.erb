@@ -69,7 +69,7 @@
     { label: t('menu.footer.home'), path: home_path },
     { label: t('menu.footer.contact'), path: contact_path },
     { label: t('menu.footer.faq'), path: faq_path },
-    { label: t('menu.footer.project_site'), path: ENV['PROJECT_SOURCE_URL'] }
+    { label: t('menu.footer.project_site'), path: Rails.configuration.radarpgcs[:scm_url] }
   ]%>
 </body>
 </html>
