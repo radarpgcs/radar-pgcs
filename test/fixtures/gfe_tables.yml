@@ -1,13 +1,603 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  act: MyString
-  employment: MyString
-  level: 1
-  value: 1.5
-
-two:
-  act: MyString
-  employment: MyString
-  level: 1
-  value: 1.5
+---
+ANALISTA-1:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 1
+  :value: 301.83
+ANALISTA-2:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 2
+  :value: 327.18
+ANALISTA-3:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 3
+  :value: 354.66
+ANALISTA-4:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 4
+  :value: 384.45
+ANALISTA-5:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 5
+  :value: 416.74
+ANALISTA-6:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 6
+  :value: 451.76
+ANALISTA-7:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 7
+  :value: 489.7
+ANALISTA-8:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 8
+  :value: 530.83
+ANALISTA-9:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 9
+  :value: 575.42
+ANALISTA-10:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 10
+  :value: 623.75
+ANALISTA-11:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 11
+  :value: 676.17
+ANALISTA-12:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 12
+  :value: 732.95
+ANALISTA-13:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 13
+  :value: 794.53
+ANALISTA-14:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 14
+  :value: 861.25
+ANALISTA-15:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 15
+  :value: 933.59
+ANALISTA-16:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 16
+  :value: 1012.02
+ANALISTA-17:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 17
+  :value: 1097.03
+ANALISTA-18:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 18
+  :value: 1189.19
+ANALISTA-19:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 19
+  :value: 1289.08
+ANALISTA-20:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 20
+  :value: 1397.37
+ANALISTA-21:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 21
+  :value: 1514.73
+ANALISTA-22:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 22
+  :value: 1641.98
+ANALISTA-23:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 23
+  :value: 1779.9
+ANALISTA-24:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 24
+  :value: 1929.4
+ANALISTA-25:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 25
+  :value: 2091.49
+ANALISTA-26:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 26
+  :value: 2267.16
+ANALISTA-27:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 27
+  :value: 2457.61
+ANALISTA-28:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 28
+  :value: 2664.05
+ANALISTA-29:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 29
+  :value: 2887.83
+ANALISTA-30:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 30
+  :value: 3130.4
+ANALISTA-31:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 31
+  :value: 3393.37
+ANALISTA-32:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 32
+  :value: 3678.4
+ANALISTA-33:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 33
+  :value: 3987.4
+ANALISTA-34:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 34
+  :value: 4322.33
+ANALISTA-35:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 35
+  :value: 4685.42
+ANALISTA-36:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 36
+  :value: 5078.97
+ANALISTA-37:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 37
+  :value: 5505.62
+ANALISTA-38:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 38
+  :value: 5968.1
+ANALISTA-39:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 39
+  :value: 6469.4
+ANALISTA-40:
+  :act: 2015-2016
+  :employment: ANALISTA
+  :level: 40
+  :value: 7012.83
+TECNICO-1:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 1
+  :value: 161.37
+TECNICO-2:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 2
+  :value: 174.92
+TECNICO-3:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 3
+  :value: 189.61
+TECNICO-4:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 4
+  :value: 205.54
+TECNICO-5:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 5
+  :value: 222.81
+TECNICO-6:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 6
+  :value: 241.51
+TECNICO-7:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 7
+  :value: 261.81
+TECNICO-8:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 8
+  :value: 283.8
+TECNICO-9:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 9
+  :value: 307.64
+TECNICO-10:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 10
+  :value: 333.49
+TECNICO-11:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 11
+  :value: 361.49
+TECNICO-12:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 12
+  :value: 391.84
+TECNICO-13:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 13
+  :value: 424.77
+TECNICO-14:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 14
+  :value: 460.44
+TECNICO-15:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 15
+  :value: 499.12
+TECNICO-16:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 16
+  :value: 541.06
+TECNICO-17:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 17
+  :value: 586.5
+TECNICO-18:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 18
+  :value: 635.76
+TECNICO-19:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 19
+  :value: 689.18
+TECNICO-20:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 20
+  :value: 747.06
+TECNICO-21:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 21
+  :value: 809.81
+TECNICO-22:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 22
+  :value: 877.84
+TECNICO-23:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 23
+  :value: 951.58
+TECNICO-24:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 24
+  :value: 1031.49
+TECNICO-25:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 25
+  :value: 1118.14
+TECNICO-26:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 26
+  :value: 1212.07
+TECNICO-27:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 27
+  :value: 1313.91
+TECNICO-28:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 28
+  :value: 1424.26
+TECNICO-29:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 29
+  :value: 1543.89
+TECNICO-30:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 30
+  :value: 1673.59
+TECNICO-31:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 31
+  :value: 1814.16
+TECNICO-32:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 32
+  :value: 1966.54
+TECNICO-33:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 33
+  :value: 2131.75
+TECNICO-34:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 34
+  :value: 2310.81
+TECNICO-35:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 35
+  :value: 2504.9
+TECNICO-36:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 36
+  :value: 2715.34
+TECNICO-37:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 37
+  :value: 2943.42
+TECNICO-38:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 38
+  :value: 3190.67
+TECNICO-39:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 39
+  :value: 3458.68
+TECNICO-40:
+  :act: 2015-2016
+  :employment: TECNICO
+  :level: 40
+  :value: 3749.21
+AUXILIAR-1:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 1
+  :value: 71.79
+AUXILIAR-2:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 2
+  :value: 77.82
+AUXILIAR-3:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 3
+  :value: 84.36
+AUXILIAR-4:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 4
+  :value: 91.44
+AUXILIAR-5:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 5
+  :value: 99.11
+AUXILIAR-6:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 6
+  :value: 107.44
+AUXILIAR-7:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 7
+  :value: 116.47
+AUXILIAR-8:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 8
+  :value: 126.26
+AUXILIAR-9:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 9
+  :value: 136.84
+AUXILIAR-10:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 10
+  :value: 148.34
+AUXILIAR-11:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 11
+  :value: 160.8
+AUXILIAR-12:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 12
+  :value: 174.32
+AUXILIAR-13:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 13
+  :value: 188.96
+AUXILIAR-14:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 14
+  :value: 204.83
+AUXILIAR-15:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 15
+  :value: 222.05
+AUXILIAR-16:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 16
+  :value: 240.7
+AUXILIAR-17:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 17
+  :value: 260.92
+AUXILIAR-18:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 18
+  :value: 282.82
+AUXILIAR-19:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 19
+  :value: 306.59
+AUXILIAR-20:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 20
+  :value: 332.33
+AUXILIAR-21:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 21
+  :value: 360.26
+AUXILIAR-22:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 22
+  :value: 390.52
+AUXILIAR-23:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 23
+  :value: 423.31
+AUXILIAR-24:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 24
+  :value: 458.89
+AUXILIAR-25:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 25
+  :value: 497.43
+AUXILIAR-26:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 26
+  :value: 539.21
+AUXILIAR-27:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 27
+  :value: 584.51
+AUXILIAR-28:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 28
+  :value: 633.6
+AUXILIAR-29:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 29
+  :value: 686.83
+AUXILIAR-30:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 30
+  :value: 744.52
+AUXILIAR-31:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 31
+  :value: 807.06
+AUXILIAR-32:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 32
+  :value: 874.86
+AUXILIAR-33:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 33
+  :value: 948.34
+AUXILIAR-34:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 34
+  :value: 1028.0
+AUXILIAR-35:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 35
+  :value: 1114.36
+AUXILIAR-36:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 36
+  :value: 1207.98
+AUXILIAR-37:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 37
+  :value: 1309.43
+AUXILIAR-38:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 38
+  :value: 1419.42
+AUXILIAR-39:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 39
+  :value: 1538.66
+AUXILIAR-40:
+  :act: 2015-2016
+  :employment: AUXILIAR
+  :level: 40
+  :value: 1667.91
