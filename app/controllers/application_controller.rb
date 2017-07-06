@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
     }
 
     if logged_in?
-      @news = News.where(version: ENV['APP_VERSION'])
+      @news = News.where(version: Rails.configuration.radarpgcs[:version])
       render '/home'
     else
       render '/index', layout: false
@@ -100,10 +100,10 @@ class ApplicationController < ActionController::Base
   # GET /news
   def news
     html = '<p align="justify">'
-    html << "<h4>#{I18n.translate 'news.subtitle', version: ENV['APP_VERSION']}</h4>"
+    html << "<h4>#{I18n.translate 'news.subtitle', version: Rails.configuration.radarpgcs[:version]}</h4>"
     html << '<ul>'
 
-    News.where(version: ENV['APP_VERSION']).each do |e|
+    News.where(version: Rails.configuration.radarpgcs[:version]).each do |e|
       html << "<li>#{e.message}</li>"
     end
 
