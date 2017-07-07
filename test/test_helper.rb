@@ -8,3 +8,4 @@ class ActiveSupport::TestCase
 end
 
 _load_fixtures
+`rake db:fixtures:promotions`
