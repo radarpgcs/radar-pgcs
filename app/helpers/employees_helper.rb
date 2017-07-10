@@ -110,7 +110,6 @@ module EmployeesHelper
 
     SalaryScale.where(scale: base_reference, act: current_act).select do |s|
       year = /\A\d{4}-(\d{4})\z/.match(s.act).captures.first.to_i
-      last_year = year
       if year > last_year
         last_year = year
         scale = s

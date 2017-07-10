@@ -66,4 +66,12 @@ class EmployeesHelperTest < ActionView::TestCase
 
     assert_equal expected, actual
   end
+
+  test 'should get base salary of an employee' do
+    employee = Employee.find_by registry: 1
+    expected = 3405.56
+    actual = base_salary employee
+
+    assert_equal expected, actual
+  end
 end
