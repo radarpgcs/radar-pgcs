@@ -15,16 +15,16 @@ class EmployeesHelperTest < ActionView::TestCase
 
   test 'should get the regional name given an employee' do
     employee = Employee.find_by registry: 1
-    expected = 'Belo Horizonte'
+    expected = 'Belém'
 
     assert_equal expected, format_regional(employee)
 
     employee = Employee.find_by registry: 2
-    expected = 'São Paulo'
+    expected = 'Fortaleza'
 
     assert_equal expected, format_regional(employee)
     employee = Employee.find_by registry: 3
-    expected = 'Curitiba'
+    expected = 'Brasília'
 
     assert_equal expected, format_regional(employee)
   end
