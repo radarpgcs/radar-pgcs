@@ -1,4 +1,4 @@
-class EmployeesHelperTest < ActiveSupport::TestCase
+class EmployeesHelperTest < ActionView::TestCase
   include EmployeesHelper
 
   test 'should get a eight digits number' do
@@ -27,5 +27,14 @@ class EmployeesHelperTest < ActiveSupport::TestCase
     expected = 'Curitiba'
 
     assert_equal expected, format_regional(employee)
+  end
+
+  test "should get employee'stars dashboard" do
+    employee = Employee.find_by registry: 1
+    proms = employee.promotions.count { |p| p.type == 'PM' }
+
+    found = stars(employee).scan /("Star")/
+    assert found
+    assert_equal proms, found.size
   end
 end
