@@ -59,4 +59,11 @@ class EmployeesHelperTest < ActionView::TestCase
     found = board.scan(%r(/images/thumbs-up.png)).size
     assert_equal proms[:pm], found
   end
+
+  test 'should get payment reference' do
+    expected = '07/2017'
+    actual = payment_reference Payment.new(year: 2017, month: 7)
+
+    assert_equal expected, actual
+  end
 end
