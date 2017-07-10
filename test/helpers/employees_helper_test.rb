@@ -29,12 +29,34 @@ class EmployeesHelperTest < ActionView::TestCase
     assert_equal expected, format_regional(employee)
   end
 
-  test "should get employee'stars dashboard" do
+  test "should get employee's stars dashboard" do
     employee = Employee.find_by registry: 1
     proms = employee.promotions.count { |p| p.type == 'PM' }
 
     found = stars(employee).scan /("Star")/
     assert found
     assert_equal proms, found.size
+  end
+
+  test "should get employee's promotion dashboard" do
+    employee = Employee.find_by registry: 2
+    proms = { pm: 0, pts: 0 }
+
+    employee.promotions.each do |p|
+      next if p.year < employee.hiring_date.year
+
+      if p.type == 'PM'
+        proms[:pm] += 1
+      elsif p.type == 'PTS'
+        proms[:pts] += 1
+      end
+    end
+
+    board = promotions_board(employee)
+    found = board.scan(%r(/images/thumbs-down.png)).size
+    assert_equal proms[:pts], found
+
+    found = board.scan(%r(/images/thumbs-up.png)).size
+    assert_equal proms[:pm], found
   end
 end
