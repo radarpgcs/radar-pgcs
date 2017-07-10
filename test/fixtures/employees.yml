@@ -1,75 +1,80 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 ---
 '00001':
   :registry: '00001'
   :name: Johann Wolfgang von Goethe
   :employment: TECNICO
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BHE
-  :regional: BHE
-  :hiring_date: '2017-4-19'
-  :working_hours: '08:00'
-  :active: true
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/BLM
+  :regional: BLM
+  :hiring_date: '2016-3-6'
+  :working_hours: '04:00'
+  :reference: 214-6B
+  :active: false
 '00002':
   :registry: '00002'
   :name: Fiódor Mikhailovitch Dostoiévski
-  :employment: TECNICO
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/SPO
-  :regional: SPO
-  :hiring_date: '2012-10-12'
+  :employment: ANALISTA
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2016-10-7'
   :working_hours: '08:00'
+  :reference: 101-6B
   :active: false
 '00003':
   :registry: '00003'
   :name: Liev Nikoláievich Tolstói
-  :employment: ANALISTA
+  :employment: AUXILIAR
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/CTA
-  :regional: CTA
-  :hiring_date: '2016-7-9'
-  :working_hours: '08:00'
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2013-8-13'
+  :working_hours: '06:00'
+  :reference: 108-6B
   :active: false
 '00004':
   :registry: '00004'
   :name: Nikolai Vasilievich Gogol
-  :employment: TECNICO
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2015-3-6'
-  :working_hours: '06:00'
+  :employment: ANALISTA
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/SPO
+  :regional: SPO
+  :hiring_date: '2012-5-24'
+  :working_hours: '04:00'
+  :reference: 121-6A
   :active: true
 '00005':
   :registry: '00005'
   :name: Anton Pavlovitch Tchecov
-  :employment: AUXILIAR
+  :employment: TECNICO
   :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2012-2-7'
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2015-6-6'
   :working_hours: '08:00'
-  :active: false
+  :reference: 206-6A
+  :active: true
 '00006':
   :registry: '00006'
   :name: Alexander Sergueievitch Pushkin
-  :employment: AUXILIAR
+  :employment: ANALISTA
   :category: CLASSE 3 - PGCS
   :department: SUPTEST/XPTO/BHE
   :regional: BHE
-  :hiring_date: '2015-9-9'
+  :hiring_date: '2014-9-25'
   :working_hours: '06:00'
-  :active: true
+  :reference: 109-EA
+  :active: false
 '00007':
   :registry: '00007'
   :name: Ivan Sergeievitch Turgueniev
-  :employment: TECNICO
-  :category: CLASSE 3 - PGCS
+  :employment: AUXILIAR
+  :category: CLASSE 2 - PGCS
   :department: SUPTEST/XPTO/RJO
   :regional: RJO
-  :hiring_date: '2011-10-2'
-  :working_hours: '04:00'
+  :hiring_date: '2016-4-25'
+  :working_hours: '08:00'
+  :reference: 101-EA
   :active: false
 00008:
   :registry: 00008
@@ -78,736 +83,810 @@
   :category: CLASSE 1 - PGCS
   :department: SUPTEST/XPTO/SDR
   :regional: SDR
-  :hiring_date: '2016-3-11'
+  :hiring_date: '2016-12-5'
   :working_hours: '08:00'
-  :active: true
+  :reference: 108-EA
+  :active: false
 00009:
   :registry: 00009
   :name: Giovanni Boccaccio
-  :employment: ANALISTA
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2015-2-25'
-  :working_hours: '06:00'
+  :employment: AUXILIAR
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2014-9-9'
+  :working_hours: '04:00'
+  :reference: 118-6B
   :active: true
 '00010':
   :registry: '00010'
   :name: Francesco Petrarca
-  :employment: TECNICO
+  :employment: AUXILIAR
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/BSA
-  :regional: BSA
-  :hiring_date: '2016-7-20'
-  :working_hours: '08:00'
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2016-2-13'
+  :working_hours: '06:00'
+  :reference: 203-6A
   :active: true
 '00011':
   :registry: '00011'
   :name: João Guimarães Rosa
-  :employment: ANALISTA
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2016-1-2'
+  :employment: TECNICO
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/RJO
+  :regional: RJO
+  :hiring_date: '2016-9-4'
   :working_hours: '08:00'
-  :active: true
+  :reference: 224-8A
+  :active: false
 '00012':
   :registry: '00012'
   :name: Joaquim Maria Machado de Assis
-  :employment: TECNICO
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BSA
-  :regional: BSA
-  :hiring_date: '2016-2-15'
+  :employment: AUXILIAR
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/SDR
+  :regional: SDR
+  :hiring_date: '2017-11-18'
   :working_hours: '08:00'
-  :active: true
+  :reference: 321-6A
+  :active: false
 '00013':
   :registry: '00013'
   :name: Robert Hugh Benson
   :employment: ANALISTA
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2015-1-3'
-  :working_hours: '04:00'
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/RJO
+  :regional: RJO
+  :hiring_date: '2016-3-2'
+  :working_hours: '08:00'
+  :reference: 105-8B
   :active: true
 '00014':
   :registry: '00014'
   :name: Gilbert Keith Chesterton
-  :employment: ANALISTA
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/FLA
-  :regional: FLA
-  :hiring_date: '2016-12-5'
-  :working_hours: '06:00'
-  :active: true
+  :employment: AUXILIAR
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/PAE
+  :regional: PAE
+  :hiring_date: '2010-1-13'
+  :working_hours: '04:00'
+  :reference: 319-8B
+  :active: false
 '00015':
   :registry: '00015'
   :name: John Ronald Reuel Tolkien
-  :employment: AUXILIAR
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/FLA
-  :regional: FLA
-  :hiring_date: '2009-5-1'
-  :working_hours: '06:00'
+  :employment: ANALISTA
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/BHE
+  :regional: BHE
+  :hiring_date: '2015-8-23'
+  :working_hours: '08:00'
+  :reference: 202-8A
   :active: true
 '00016':
   :registry: '00016'
   :name: Clive Staples Lewis
-  :employment: AUXILIAR
+  :employment: ANALISTA
   :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/SPO
-  :regional: SPO
-  :hiring_date: '2016-3-15'
-  :working_hours: '06:00'
-  :active: false
+  :department: SUPTEST/XPTO/RJO
+  :regional: RJO
+  :hiring_date: '2012-3-18'
+  :working_hours: '04:00'
+  :reference: 218-8A
+  :active: true
 '00017':
   :registry: '00017'
   :name: William Shakespeare
-  :employment: TECNICO
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2014-1-21'
+  :employment: ANALISTA
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2010-4-22'
   :working_hours: '08:00'
+  :reference: 202-8B
   :active: false
 00018:
   :registry: 00018
   :name: William Gerald Golding
-  :employment: TECNICO
+  :employment: AUXILIAR
   :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2012-12-7'
-  :working_hours: '06:00'
+  :department: SUPTEST/XPTO/SDR
+  :regional: SDR
+  :hiring_date: '2017-5-25'
+  :working_hours: '08:00'
+  :reference: 111-8B
   :active: true
 00019:
   :registry: 00019
   :name: Aldous Leonard Huxley
   :employment: AUXILIAR
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/SPO
-  :regional: SPO
-  :hiring_date: '2010-6-20'
-  :working_hours: '04:00'
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2015-11-1'
+  :working_hours: '08:00'
+  :reference: 304-6A
   :active: false
 '00020':
   :registry: '00020'
   :name: George Orwell
-  :employment: AUXILIAR
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BHE
-  :regional: BHE
-  :hiring_date: '2014-11-17'
-  :working_hours: '04:00'
-  :active: true
+  :employment: TECNICO
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2011-11-16'
+  :working_hours: '08:00'
+  :reference: 214-8B
+  :active: false
 '00021':
   :registry: '00021'
   :name: John Anthony Burgess Wilson
   :employment: AUXILIAR
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/CTA
-  :regional: CTA
-  :hiring_date: '2012-12-15'
-  :working_hours: '04:00'
-  :active: false
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/SDR
+  :regional: SDR
+  :hiring_date: '2010-9-1'
+  :working_hours: '08:00'
+  :reference: 121-EB
+  :active: true
 '00022':
   :registry: '00022'
   :name: Ernest Miller Hemingway
-  :employment: TECNICO
+  :employment: AUXILIAR
   :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/RJO
-  :regional: RJO
-  :hiring_date: '2015-3-10'
-  :working_hours: '04:00'
-  :active: true
+  :department: SUPTEST/XPTO/SPO
+  :regional: SPO
+  :hiring_date: '2010-5-22'
+  :working_hours: '08:00'
+  :reference: 108-EA
+  :active: false
 '00023':
   :registry: '00023'
   :name: Jerome David Salinger
-  :employment: TECNICO
+  :employment: ANALISTA
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/SPO
-  :regional: SPO
-  :hiring_date: '2014-2-20'
-  :working_hours: '08:00'
+  :department: SUPTEST/XPTO/PAE
+  :regional: PAE
+  :hiring_date: '2014-10-23'
+  :working_hours: '04:00'
+  :reference: 312-6A
   :active: true
 '00024':
   :registry: '00024'
   :name: Otto Maria Carpeaux
-  :employment: AUXILIAR
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/SDR
-  :regional: SDR
-  :hiring_date: '2012-11-10'
+  :employment: ANALISTA
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2015-8-16'
   :working_hours: '04:00'
-  :active: true
+  :reference: 117-6B
+  :active: false
 '00025':
   :registry: '00025'
   :name: Tomás de Aquino
-  :employment: ANALISTA
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/SDR
-  :regional: SDR
-  :hiring_date: '2010-5-23'
-  :working_hours: '08:00'
-  :active: false
+  :employment: TECNICO
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2014-4-9'
+  :working_hours: '04:00'
+  :reference: 312-8B
+  :active: true
 '00026':
   :registry: '00026'
   :name: Agostinho de Hipona
   :employment: TECNICO
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2012-11-15'
-  :working_hours: '08:00'
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/BHE
+  :regional: BHE
+  :hiring_date: '2016-11-4'
+  :working_hours: '06:00'
+  :reference: 201-8B
   :active: true
 '00027':
   :registry: '00027'
   :name: Alberto Magno
-  :employment: AUXILIAR
-  :category: CLASSE 1 - PGCS
+  :employment: TECNICO
+  :category: CLASSE 3 - PGCS
   :department: SUPTEST/XPTO/CTA
   :regional: CTA
-  :hiring_date: '2010-2-17'
-  :working_hours: '04:00'
+  :hiring_date: '2011-5-3'
+  :working_hours: '06:00'
+  :reference: 110-6B
   :active: true
 00028:
   :registry: 00028
   :name: Hugo de São Vitor
   :employment: TECNICO
   :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/SDR
-  :regional: SDR
-  :hiring_date: '2017-11-6'
+  :department: SUPTEST/XPTO/BLM
+  :regional: BLM
+  :hiring_date: '2012-12-1'
   :working_hours: '04:00'
+  :reference: 107-EA
   :active: false
 00029:
   :registry: 00029
   :name: Victor-Marie Hugo
-  :employment: TECNICO
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2009-5-23'
+  :employment: AUXILIAR
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2012-8-3'
   :working_hours: '06:00'
+  :reference: 209-8B
   :active: false
 '00030':
   :registry: '00030'
   :name: Alexandre Dumas
-  :employment: TECNICO
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/BSA
-  :regional: BSA
-  :hiring_date: '2009-12-16'
-  :working_hours: '08:00'
+  :employment: ANALISTA
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/PAE
+  :regional: PAE
+  :hiring_date: '2009-8-15'
+  :working_hours: '04:00'
+  :reference: 119-6B
   :active: false
 '00031':
   :registry: '00031'
   :name: Jules Gabriel Verne
-  :employment: TECNICO
+  :employment: ANALISTA
   :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/BHE
-  :regional: BHE
-  :hiring_date: '2011-4-19'
-  :working_hours: '04:00'
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2009-2-1'
+  :working_hours: '08:00'
+  :reference: 115-EB
   :active: true
 '00032':
   :registry: '00032'
   :name: Gustave Flaubert
-  :employment: ANALISTA
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2011-2-10'
-  :working_hours: '06:00'
-  :active: false
+  :employment: AUXILIAR
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/PAE
+  :regional: PAE
+  :hiring_date: '2010-1-23'
+  :working_hours: '04:00'
+  :reference: 115-6A
+  :active: true
 '00033':
   :registry: '00033'
   :name: Albert Camus
   :employment: ANALISTA
   :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2015-8-20'
+  :department: SUPTEST/XPTO/RJO
+  :regional: RJO
+  :hiring_date: '2015-6-16'
   :working_hours: '08:00'
-  :active: false
+  :reference: 109-8A
+  :active: true
 '00034':
   :registry: '00034'
   :name: Miguel de Cervantes Saavedra
-  :employment: TECNICO
+  :employment: ANALISTA
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/SDR
-  :regional: SDR
-  :hiring_date: '2017-4-20'
-  :working_hours: '06:00'
+  :department: SUPTEST/XPTO/CTA
+  :regional: CTA
+  :hiring_date: '2013-8-16'
+  :working_hours: '08:00'
+  :reference: 320-6B
   :active: false
 '00035':
   :registry: '00035'
   :name: Félix Lope de Vega y Carpio
-  :employment: ANALISTA
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BSA
-  :regional: BSA
-  :hiring_date: '2013-5-23'
-  :working_hours: '08:00'
+  :employment: AUXILIAR
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/SDR
+  :regional: SDR
+  :hiring_date: '2011-6-20'
+  :working_hours: '06:00'
+  :reference: 322-6A
   :active: false
 '00036':
   :registry: '00036'
   :name: Pedro Calderón de la Barca
   :employment: TECNICO
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/CTA
-  :regional: CTA
-  :hiring_date: '2014-11-21'
-  :working_hours: '08:00'
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/BHE
+  :regional: BHE
+  :hiring_date: '2017-7-18'
+  :working_hours: '04:00'
+  :reference: 114-6A
   :active: true
 '00037':
   :registry: '00037'
   :name: Francisco Gómez de Quevedo y Santibáñez Villegas
   :employment: ANALISTA
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/RJO
-  :regional: RJO
-  :hiring_date: '2014-1-9'
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2012-2-12'
   :working_hours: '06:00'
+  :reference: 224-8B
   :active: true
 00038:
   :registry: 00038
   :name: Luis de Góngora y Lopes
   :employment: ANALISTA
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/RJO
-  :regional: RJO
-  :hiring_date: '2013-2-12'
-  :working_hours: '04:00'
-  :active: false
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2014-3-13'
+  :working_hours: '06:00'
+  :reference: 110-8B
+  :active: true
 00039:
   :registry: 00039
   :name: Garcilaso de la Vega
-  :employment: TECNICO
+  :employment: ANALISTA
   :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/SDR
-  :regional: SDR
-  :hiring_date: '2011-9-21'
-  :working_hours: '06:00'
-  :active: true
+  :department: SUPTEST/XPTO/RCE
+  :regional: RCE
+  :hiring_date: '2015-5-16'
+  :working_hours: '04:00'
+  :reference: 311-8B
+  :active: false
 '00040':
   :registry: '00040'
   :name: José de Anchieta
-  :employment: TECNICO
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2010-4-8'
-  :working_hours: '06:00'
+  :employment: AUXILIAR
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2010-8-20'
+  :working_hours: '04:00'
+  :reference: 206-8B
   :active: true
 '00041':
   :registry: '00041'
   :name: Manuel da Nóbrega
-  :employment: ANALISTA
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2014-12-5'
-  :working_hours: '08:00'
-  :active: false
+  :employment: AUXILIAR
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/RJO
+  :regional: RJO
+  :hiring_date: '2009-6-15'
+  :working_hours: '04:00'
+  :reference: 103-EA
+  :active: true
 '00042':
   :registry: '00042'
   :name: José Martiniano de Alencar
   :employment: AUXILIAR
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/CTA
-  :regional: CTA
-  :hiring_date: '2010-11-8'
-  :working_hours: '06:00'
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2011-3-14'
+  :working_hours: '04:00'
+  :reference: 218-8B
   :active: true
 '00043':
   :registry: '00043'
   :name: Antônio Gonçalves Dias
-  :employment: AUXILIAR
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/RJO
-  :regional: RJO
-  :hiring_date: '2011-4-18'
-  :working_hours: '04:00'
+  :employment: ANALISTA
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/CTA
+  :regional: CTA
+  :hiring_date: '2016-8-17'
+  :working_hours: '06:00'
+  :reference: 320-8B
   :active: true
 '00044':
   :registry: '00044'
   :name: Antônio Frederico de Castro Alves
-  :employment: TECNICO
+  :employment: ANALISTA
   :category: CLASSE 3 - PGCS
   :department: SUPTEST/XPTO/FLA
   :regional: FLA
-  :hiring_date: '2017-6-14'
-  :working_hours: '04:00'
-  :active: true
+  :hiring_date: '2016-11-20'
+  :working_hours: '08:00'
+  :reference: 114-4B
+  :active: false
 '00045':
   :registry: '00045'
   :name: Manuel Antônio Álvares de Azevedo
-  :employment: AUXILIAR
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/FNS
-  :regional: FNS
-  :hiring_date: '2017-3-14'
-  :working_hours: '04:00'
+  :employment: ANALISTA
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2016-3-9'
+  :working_hours: '06:00'
+  :reference: 118-4B
   :active: true
 '00046':
   :registry: '00046'
   :name: Bernardo Joaquim da Silva Guimarães
   :employment: TECNICO
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2012-6-6'
-  :working_hours: '06:00'
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/SDR
+  :regional: SDR
+  :hiring_date: '2009-1-18'
+  :working_hours: '08:00'
+  :reference: 217-8A
   :active: false
 '00047':
   :registry: '00047'
   :name: Jorge Leal Amado de Faria
-  :employment: AUXILIAR
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/RJO
-  :regional: RJO
-  :hiring_date: '2017-2-17'
-  :working_hours: '06:00'
+  :employment: ANALISTA
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2009-3-7'
+  :working_hours: '04:00'
+  :reference: 208-6A
   :active: false
 00048:
   :registry: 00048
   :name: Graciliano Ramos de Oliveira
-  :employment: ANALISTA
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2013-8-11'
-  :working_hours: '06:00'
+  :employment: AUXILIAR
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/CTA
+  :regional: CTA
+  :hiring_date: '2009-6-6'
+  :working_hours: '08:00'
+  :reference: 209-8A
   :active: false
 00049:
   :registry: 00049
   :name: José Maria de Eça de Queiroz
-  :employment: TECNICO
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/SDR
-  :regional: SDR
-  :hiring_date: '2011-2-19'
-  :working_hours: '06:00'
+  :employment: ANALISTA
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/PAE
+  :regional: PAE
+  :hiring_date: '2016-1-6'
+  :working_hours: '04:00'
+  :reference: 121-8A
   :active: false
 '00050':
   :registry: '00050'
   :name: Carlos Drummond de Andrade
-  :employment: TECNICO
+  :employment: ANALISTA
   :category: CLASSE 1 - PGCS
   :department: SUPTEST/XPTO/RCE
   :regional: RCE
-  :hiring_date: '2009-12-3'
-  :working_hours: '08:00'
-  :active: true
+  :hiring_date: '2011-4-16'
+  :working_hours: '04:00'
+  :reference: 208-6B
+  :active: false
 '00051':
   :registry: '00051'
   :name: Afonso Henriques de Lima Barreto
-  :employment: AUXILIAR
+  :employment: TECNICO
   :category: CLASSE 2 - PGCS
   :department: SUPTEST/XPTO/RJO
   :regional: RJO
-  :hiring_date: '2010-1-24'
-  :working_hours: '06:00'
+  :hiring_date: '2014-10-18'
+  :working_hours: '08:00'
+  :reference: 121-EB
   :active: true
 '00052':
   :registry: '00052'
   :name: Mário Cochrane de Alencar
-  :employment: TECNICO
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/SDR
-  :regional: SDR
-  :hiring_date: '2011-7-5'
+  :employment: AUXILIAR
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2017-1-14'
   :working_hours: '04:00'
+  :reference: 120-4A
   :active: false
 '00053':
   :registry: '00053'
   :name: Rachel de Queiroz
-  :employment: TECNICO
+  :employment: AUXILIAR
   :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/CTA
-  :regional: CTA
-  :hiring_date: '2011-3-21'
-  :working_hours: '04:00'
+  :department: SUPTEST/XPTO/BLM
+  :regional: BLM
+  :hiring_date: '2010-2-10'
+  :working_hours: '06:00'
+  :reference: 322-8A
   :active: false
 '00054':
   :registry: '00054'
   :name: Casimiro José Marques de Abreu
   :employment: TECNICO
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/FNS
-  :regional: FNS
-  :hiring_date: '2009-8-6'
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/BHE
+  :regional: BHE
+  :hiring_date: '2016-8-15'
   :working_hours: '06:00'
-  :active: false
+  :reference: 108-6B
+  :active: true
 '00055':
   :registry: '00055'
   :name: Olavo Brás Martins dos Guimarães Bilac
-  :employment: AUXILIAR
+  :employment: TECNICO
   :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2012-2-13'
-  :working_hours: '06:00'
-  :active: true
+  :department: SUPTEST/XPTO/PAE
+  :regional: PAE
+  :hiring_date: '2017-11-14'
+  :working_hours: '04:00'
+  :reference: 217-8A
+  :active: false
 '00056':
   :registry: '00056'
   :name: Mario Raul Morais de Andrade
-  :employment: ANALISTA
+  :employment: AUXILIAR
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/BSA
-  :regional: BSA
-  :hiring_date: '2014-7-22'
-  :working_hours: '06:00'
-  :active: true
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2016-7-6'
+  :working_hours: '08:00'
+  :reference: 304-6A
+  :active: false
 '00057':
   :registry: '00057'
   :name: Manuel Carneiro de Sousa Bandeira
-  :employment: TECNICO
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2011-6-2'
-  :working_hours: '04:00'
+  :employment: ANALISTA
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FLA
+  :regional: FLA
+  :hiring_date: '2013-5-24'
+  :working_hours: '08:00'
+  :reference: 119-4B
   :active: false
 00058:
   :registry: 00058
   :name: Boaventura
   :employment: TECNICO
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/RJO
-  :regional: RJO
-  :hiring_date: '2010-5-1'
-  :working_hours: '08:00'
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2015-11-22'
+  :working_hours: '06:00'
+  :reference: 216-6B
   :active: true
 00059:
   :registry: 00059
   :name: Roger Bacon
-  :employment: AUXILIAR
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/SPO
-  :regional: SPO
-  :hiring_date: '2013-1-23'
+  :employment: TECNICO
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/RCE
+  :regional: RCE
+  :hiring_date: '2010-12-21'
   :working_hours: '08:00'
+  :reference: 122-8B
   :active: true
 '00060':
   :registry: '00060'
   :name: Aristóteles
-  :employment: AUXILIAR
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2017-8-21'
+  :employment: ANALISTA
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2011-5-10'
   :working_hours: '08:00'
+  :reference: 211-6B
   :active: true
 '00061':
   :registry: '00061'
   :name: João Duns Escoto
   :employment: AUXILIAR
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/BHE
-  :regional: BHE
-  :hiring_date: '2014-3-5'
-  :working_hours: '08:00'
+  :category: CLASSE 1 - PGCS
+  :department: SUPTEST/XPTO/BLM
+  :regional: BLM
+  :hiring_date: '2013-3-9'
+  :working_hours: '06:00'
+  :reference: 221-8B
   :active: false
 '00062':
   :registry: '00062'
   :name: Anselmo de Cantuária
-  :employment: AUXILIAR
+  :employment: ANALISTA
   :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/FLA
-  :regional: FLA
-  :hiring_date: '2012-4-3'
-  :working_hours: '04:00'
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2010-2-19'
+  :working_hours: '06:00'
+  :reference: 207-8A
   :active: true
 '00063':
   :registry: '00063'
   :name: Anício Mânlio Torquato Severino Boécio
   :employment: AUXILIAR
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/BSA
-  :regional: BSA
-  :hiring_date: '2012-7-3'
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2013-12-10'
   :working_hours: '08:00'
+  :reference: 110-4B
   :active: true
 '00064':
   :registry: '00064'
   :name: Pedro Abelardo
   :employment: ANALISTA
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2015-6-3'
-  :working_hours: '08:00'
-  :active: true
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/SPO
+  :regional: SPO
+  :hiring_date: '2017-6-20'
+  :working_hours: '06:00'
+  :reference: 109-8B
+  :active: false
 '00065':
   :registry: '00065'
   :name: Eckhart de Hochheim
-  :employment: ANALISTA
+  :employment: TECNICO
   :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/BHE
-  :regional: BHE
-  :hiring_date: '2009-7-4'
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2015-3-25'
   :working_hours: '04:00'
-  :active: false
+  :reference: 122-6A
+  :active: true
 '00066':
   :registry: '00066'
   :name: Pedro Lombardo
-  :employment: TECNICO
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2015-5-4'
+  :employment: ANALISTA
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/RCE
+  :regional: RCE
+  :hiring_date: '2017-12-5'
   :working_hours: '08:00'
+  :reference: 208-8B
   :active: true
 '00067':
   :registry: '00067'
   :name: Pseudo-Dionísio
-  :employment: AUXILIAR
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2016-2-3'
-  :working_hours: '04:00'
+  :employment: TECNICO
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2009-6-9'
+  :working_hours: '06:00'
+  :reference: 116-6B
   :active: true
 00068:
   :registry: 00068
   :name: Nicolau de Cusa ou Nicolau Krebs
   :employment: AUXILIAR
-  :category: CLASSE 2 - PGCS
+  :category: CLASSE 1 - PGCS
   :department: SUPTEST/XPTO/SDR
   :regional: SDR
-  :hiring_date: '2009-1-24'
-  :working_hours: '08:00'
+  :hiring_date: '2011-12-1'
+  :working_hours: '06:00'
+  :reference: 205-8A
   :active: true
 00069:
   :registry: 00069
   :name: Isidoro de Sevilha
   :employment: ANALISTA
-  :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2016-11-15'
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/BHE
+  :regional: BHE
+  :hiring_date: '2013-7-15'
   :working_hours: '06:00'
+  :reference: 117-8B
   :active: false
 '00070':
   :registry: '00070'
   :name: Roberto Grosseteste
   :employment: ANALISTA
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2015-11-16'
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2017-4-12'
   :working_hours: '04:00'
+  :reference: 309-8B
   :active: false
 '00071':
   :registry: '00071'
   :name: João Damasceno
-  :employment: ANALISTA
+  :employment: TECNICO
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/FNS
-  :regional: FNS
-  :hiring_date: '2012-3-17'
-  :working_hours: '08:00'
-  :active: true
+  :department: SUPTEST/XPTO/BHE
+  :regional: BHE
+  :hiring_date: '2017-7-18'
+  :working_hours: '06:00'
+  :reference: 315-8A
+  :active: false
 '00072':
   :registry: '00072'
   :name: Bernardo de Claraval
-  :employment: ANALISTA
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/RCE
-  :regional: RCE
-  :hiring_date: '2014-1-23'
+  :employment: TECNICO
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2010-9-2'
   :working_hours: '04:00'
+  :reference: 325-8B
   :active: true
 '00073':
   :registry: '00073'
   :name: Bento de Núrsia
-  :employment: ANALISTA
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2010-5-8'
-  :working_hours: '08:00'
+  :employment: TECNICO
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/SPO
+  :regional: SPO
+  :hiring_date: '2013-3-14'
+  :working_hours: '04:00'
+  :reference: 122-8A
   :active: true
 '00074':
   :registry: '00074'
   :name: Gregório Magno
-  :employment: AUXILIAR
+  :employment: ANALISTA
   :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/BLM
-  :regional: BLM
-  :hiring_date: '2016-8-11'
-  :working_hours: '08:00'
-  :active: false
+  :department: SUPTEST/XPTO/SDR
+  :regional: SDR
+  :hiring_date: '2015-3-19'
+  :working_hours: '04:00'
+  :reference: 118-EA
+  :active: true
 '00075':
   :registry: '00075'
   :name: Basílio de Cesareia
-  :employment: ANALISTA
-  :category: CLASSE 3 - PGCS
-  :department: SUPTEST/XPTO/PAE
-  :regional: PAE
-  :hiring_date: '2011-11-6'
-  :working_hours: '08:00'
+  :employment: TECNICO
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/BLM
+  :regional: BLM
+  :hiring_date: '2017-12-7'
+  :working_hours: '04:00'
+  :reference: 117-8A
   :active: false
 '00076':
   :registry: '00076'
   :name: João Cassiano
-  :employment: TECNICO
+  :employment: ANALISTA
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/BHE
-  :regional: BHE
-  :hiring_date: '2009-7-15'
+  :department: SUPTEST/XPTO/FNS
+  :regional: FNS
+  :hiring_date: '2014-1-25'
   :working_hours: '08:00'
+  :reference: 108-8A
   :active: false
 '00077':
   :registry: '00077'
   :name: Inácio de Loyola
-  :employment: ANALISTA
+  :employment: AUXILIAR
   :category: CLASSE 2 - PGCS
-  :department: SUPTEST/XPTO/RJO
-  :regional: RJO
-  :hiring_date: '2009-9-18'
+  :department: SUPTEST/XPTO/SDR
+  :regional: SDR
+  :hiring_date: '2013-6-14'
   :working_hours: '04:00'
+  :reference: 113-6A
   :active: false
 00078:
   :registry: 00078
   :name: Hildegarda de Bingen
-  :employment: TECNICO
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/SPO
-  :regional: SPO
-  :hiring_date: '2015-9-10'
-  :working_hours: '06:00'
+  :employment: AUXILIAR
+  :category: CLASSE 3 - PGCS
+  :department: SUPTEST/XPTO/RCE
+  :regional: RCE
+  :hiring_date: '2015-7-4'
+  :working_hours: '04:00'
+  :reference: 309-8B
   :active: false
 00079:
   :registry: 00079
   :name: Teresa de Ávila
-  :employment: ANALISTA
+  :employment: TECNICO
   :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/FNS
-  :regional: FNS
-  :hiring_date: '2014-1-21'
-  :working_hours: '06:00'
+  :department: SUPTEST/XPTO/BLM
+  :regional: BLM
+  :hiring_date: '2016-9-20'
+  :working_hours: '04:00'
+  :reference: 112-6B
   :active: false
 00080:
   :registry: 00080
   :name: Teresa de Lisieux
-  :employment: TECNICO
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/SPO
-  :regional: SPO
-  :hiring_date: '2013-2-16'
-  :working_hours: '06:00'
-  :active: true
+  :employment: ANALISTA
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/BSA
+  :regional: BSA
+  :hiring_date: '2014-2-22'
+  :working_hours: '04:00'
+  :reference: 115-8A
+  :active: false
 00081:
   :registry: 00081
   :name: João Maria Batista Vianney
   :employment: ANALISTA
-  :category: CLASSE 1 - PGCS
-  :department: SUPTEST/XPTO/BHE
-  :regional: BHE
-  :hiring_date: '2012-4-13'
+  :category: CLASSE 2 - PGCS
+  :department: SUPTEST/XPTO/CTA
+  :regional: CTA
+  :hiring_date: '2009-2-12'
   :working_hours: '04:00'
-  :active: true
+  :reference: 122-EA
+  :active: false
