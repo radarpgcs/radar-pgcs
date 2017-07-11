@@ -69,10 +69,18 @@ class EmployeesHelperTest < ActionView::TestCase
   end
 
   test 'should get base salary of an employee' do
-    employee = Employee.find_by registry: 1
-    expected = 3405.56
+    employee = Employee.find_by registry: 2
+    expected = 4275.22
     actual = base_salary employee
 
     assert_equal expected, actual
+  end
+
+  test 'should get estimated gfe of an employee' do
+    employee = Employee.find_by registry: 2
+    employee.payments << Payment.new(year: Time.now.year, month: Time.now.month, total: 5550.87, net_salary: 5320.25)
+    expected = 327.18
+
+    assert_equal expected, estimate_gfe(employee)
   end
 end

@@ -80,7 +80,7 @@ module EmployeesHelper
   end
 
   def estimate_gfe(employee)
-    return unless employee.employment
+    return if employee.employment.nil? || employee.payments.empty?
     
     gfe = _calculate_gfe employee
     acceptable_diff = 10_000_000
@@ -88,7 +88,6 @@ module EmployeesHelper
 
     _find_next_gfes(employee, gfe).each do |g|
       diff = (gfe - g).abs
-      acceptable_diff = diff
       if diff < acceptable_diff
         acceptable_diff = diff
         estimated_gfe = g
@@ -187,16 +186,22 @@ module EmployeesHelper
   end
 
   def _find_next_gfes(employee, gfe)
+    gfes = []
     lesser = GfeTable.where(
       act: Rails.configuration.radarpgcs[:current_act],
-      employment: employee.employment, 'value.lte' => gfe
-    ).limit(2)
+      employment: employee.employment, value: { '$lte' => gfe }
+    ).limit(3).each do |e|
+      gfes << e.value
+    end
+
     greater = GfeTable.where(
       act: Rails.configuration.radarpgcs[:current_act],
-      employment: employee.employment, 'value.gte' => gfe
-    ).limit(2)
+      employment: employee.employment, value: { '$gte' => gfe }
+    ).limit(3).each do |e|
+      gfes << e.value
+    end
 
-    greater.merge lesser
+    gfes
   end
 
   def _additional_by_qualification(employee, base_salary)
@@ -209,14 +214,14 @@ module EmployeesHelper
       when 'CLASSE 3' then 25
     end
 
-    base_salary + (base_salary * percentual / 100)
+    base_salary * percentual / 100
   end
 
   def _additional_by_year(employee, base_salary)
     return unless employee.hiring_date
 
     years = _count_working_years employee
-    additional = base_salary.dup
+    additional = 0
 
     years.times { additional += (base_salary * 1 / 100) }
     additional
@@ -233,9 +238,9 @@ module EmployeesHelper
       if year < today.year
         years += 1
       else
-        if employee.in_date.month > today.month
+        if in_date.month > today.month
           years += 1
-        elsif (employee.in_date.month == today.month) && (employee.in_date.day >= today.day)
+        elsif (in_date.month == today.month) && (in_date.day >= today.day)
           years += 1
         end
       end
