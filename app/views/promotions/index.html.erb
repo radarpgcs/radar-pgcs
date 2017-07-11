@@ -1,100 +1,3 @@
-<div id="definition" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-4">
-      <%= image_tag 'promotion.png' %>
-    </div>
-    <div class="col-sm-8 text-justify">
-      <h2><%= t '.title' %></h2>
-      <h4>1. <%= t '.pgcs.title' %></h4>
-      <h5>1.1 <%= t '.pgcs.definition.title' %></h5>
-      <p>
-        <%= t '.pgcs.definition.p1' %>
-      </p>
-      <p>
-        <%= t '.pgcs.definition.p2' %>
-      </p>
-
-      <h4>2. <%= t '.career.title' %></h4>
-      <h5>2.1 <%= t '.career.definition.title' %></h5>
-      <p>
-        <%= t '.career.definition.p1' %>
-      </p>
-
-      <h4>2. <%= t '.pm.title' %></h4>
-      <h5>2.1 <%= t '.pm.definition.title' %></h5>
-      <p>
-        <%= t '.pm.definition.p1' %>
-      </p>
-      <p>
-        <%= t '.pm.definition.p2' %><br/>
-        <%= t '.pm.definition.p3' %><br/>
-        <%= t '.pm.definition.p4' %><br/>
-        <%= t '.pm.definition.p5' %>
-      </p>
-      <p>
-        <%= t '.pm.definition.p6' %>
-      </p>
-
-      <h4>2. <%= t '.pts.title' %></h4>
-      <h5>2.1 <%= t '.pts.definition.title' %></h5>
-      <p>
-        <%= t '.pts.definition.p1' %>
-      </p>
-      <p>
-        <%= t '.pts.definition.p2' %><br/>
-        <%= t '.pts.definition.p3' %><br/>
-        <%= t '.pts.definition.p4' %><br/>
-        <%= t '.pts.definition.p5' %>
-      </p>
-      <p>
-        <%= t '.pts.definition.p6' %>
-      </p>
-    </div>
-  </div>
-</div>
-
-<div id="report" class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-8">
-      <h4><%= t '.report.title' %></h4>
-      <br/>
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th><%= t '.report.year' %></th>
-            <th colspan="2"><%= t '.report.pm' %></th>
-            <th colspan="2"><%= t '.report.pts' %></th>
-          </tr>
-          <tr>
-            <th></th>
-            <th><%= t '.report.internal' %></th>
-            <th><%= t '.report.external' %></th>
-            <th><%= t '.report.internal' %></th>
-            <th><%= t '.report.external' %></th>
-          </tr>
-        </thead>
-
-        <tbody>
-        <% @promotions.each do |year, data| %>
-          <tr>
-            <td><%= year %></td>
-            <td><%= data[:pm][:internal] %></td>
-            <td><%= data[:pm][:external] %></td>
-            <td><%= data[:pts][:internal] %></td>
-            <td><%= data[:pts][:external] %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="col-sm-2">
-      <%= image_tag 'report.png' %>
-    </div>
-  </div>
-</div>
-
 <div id="search" class="container-fluid">
   <div class="row">
     <div class="col-sm-2">
@@ -148,6 +51,103 @@
         </div>
       </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="definition" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8 text-justify">
+      <h2><%= t '.title' %></h2>
+      <h4>1. <%= t '.pgcs.title' %></h4>
+      <h5>1.1 <%= t '.pgcs.definition.title' %></h5>
+      <p>
+        <%= t '.pgcs.definition.p1' %>
+      </p>
+      <p>
+        <%= t '.pgcs.definition.p2' %>
+      </p>
+
+      <h4>2. <%= t '.career.title' %></h4>
+      <h5>2.1 <%= t '.career.definition.title' %></h5>
+      <p>
+        <%= t '.career.definition.p1' %>
+      </p>
+
+      <h4>2. <%= t '.pm.title' %></h4>
+      <h5>2.1 <%= t '.pm.definition.title' %></h5>
+      <p>
+        <%= t '.pm.definition.p1' %>
+      </p>
+      <p>
+        <%= t '.pm.definition.p2' %><br/>
+        <%= t '.pm.definition.p3' %><br/>
+        <%= t '.pm.definition.p4' %><br/>
+        <%= t '.pm.definition.p5' %>
+      </p>
+      <p>
+        <%= t '.pm.definition.p6' %>
+      </p>
+
+      <h4>2. <%= t '.pts.title' %></h4>
+      <h5>2.1 <%= t '.pts.definition.title' %></h5>
+      <p>
+        <%= t '.pts.definition.p1' %>
+      </p>
+      <p>
+        <%= t '.pts.definition.p2' %><br/>
+        <%= t '.pts.definition.p3' %><br/>
+        <%= t '.pts.definition.p4' %><br/>
+        <%= t '.pts.definition.p5' %>
+      </p>
+      <p>
+        <%= t '.pts.definition.p6' %>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <%= image_tag 'promotion.png' %>
+    </div>
+  </div>
+</div>
+
+<div id="report" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-2">
+      <%= image_tag 'report.png' %>
+    </div>
+
+    <div class="col-sm-8">
+      <h4><%= t '.report.title' %></h4>
+      <br/>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t '.report.year' %></th>
+            <th colspan="2"><%= t '.report.pm' %></th>
+            <th colspan="2"><%= t '.report.pts' %></th>
+          </tr>
+          <tr>
+            <th></th>
+            <th><%= t '.report.internal' %></th>
+            <th><%= t '.report.external' %></th>
+            <th><%= t '.report.internal' %></th>
+            <th><%= t '.report.external' %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @promotions.each do |year, data| %>
+          <tr>
+            <td><%= year %></td>
+            <td><%= data[:pm][:internal] %></td>
+            <td><%= data[:pm][:external] %></td>
+            <td><%= data[:pts][:internal] %></td>
+            <td><%= data[:pts][:external] %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

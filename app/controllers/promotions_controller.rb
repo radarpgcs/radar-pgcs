@@ -45,9 +45,9 @@ class PromotionsController < ApplicationController
     @menu_header = {
       home_path: home_path,
       menu_items: [
+        { label: t('promotions.index.menu.search'), path: '#search' },
         { label: t('promotions.index.menu.pgcs'), path: '#definition' },
-        { label: t('promotions.index.menu.report'), path: '#report' },
-        { label: t('promotions.index.menu.search'), path: '#search' }
+        { label: t('promotions.index.menu.report'), path: '#report' }
       ]
     }
   end
