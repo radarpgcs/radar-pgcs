@@ -41,9 +41,10 @@ class EmployeesHelperTest < ActionView::TestCase
   test "should get employee's promotion dashboard" do
     employee = Employee.find_by registry: 2
     proms = { pm: 0, pts: 0 }
+    last_promotion_year = Rails.configuration.radarpgcs[:last_promotion_year]
 
     employee.promotions.each do |p|
-      next if p.year < employee.hiring_date.year
+      next if p.year < employee.hiring_date.year || p.year > last_promotion_year
 
       if p.type == 'PM'
         proms[:pm] += 1
