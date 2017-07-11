@@ -80,6 +80,7 @@ class ApplicationControllerTest < ActionController::TestCase
   end
 
   test 'should get contact page' do
+    return unless ENV['RECAPTCHA_SITE_KEY']
     get :contact
     assert_response :success
   end
