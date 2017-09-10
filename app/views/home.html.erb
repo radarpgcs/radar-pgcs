@@ -25,8 +25,26 @@
         <%= t '.promotion.definition' %>
       </p>
       <p>
-        <%= link_to t('.see_more'), promotions_path %> 
+        <%= link_to t('.see_more'), promotions_path %>
       </p>
+    </div>
+  </div>
+</div>
+
+<div id="gfe_table" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2><%= t '.gfe.title' %></h2>
+      <h4><%= t '.gfe.subtitle' %></h4>
+      <p class="text-justify">
+        <%= t '.gfe.definition' %>
+      </p>
+      <p>
+        <%= link_to t('.see_more'), gfe_tables_path %>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <%= image_tag 'gfe-badge.png' %>
     </div>
   </div>
 </div>

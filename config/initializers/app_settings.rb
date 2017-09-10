@@ -4,6 +4,7 @@ settings[:scm_url] = 'https://github.com/radarpgcs/radar-pgcs'
 settings[:admin_email] = ENV['ADMIN_EMAIL']
 settings[:first_promotion_year] = ENV['FIRST_PROMOTION_YEAR'].to_i
 settings[:last_promotion_year] = ENV['LAST_PROMOTION_YEAR'].to_i
+settings[:employments] = %w(ANALISTA TECNICO AUXILIAR)
 
 last_year = 0
 last_act = nil

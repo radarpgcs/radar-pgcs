@@ -31,7 +31,8 @@ class ApplicationController < ActionController::Base
       home_path: '#home',
       menu_items: [
         { label: t('news.title'), path: '#news' },
-        { label: t('menu.header.promotion'), path: '#promotion' }
+        { label: t('menu.header.promotion'), path: '#promotion' },
+        { label: t('menu.header.gfe_table'), path: '#gfe_table' }
       ]
     }
 

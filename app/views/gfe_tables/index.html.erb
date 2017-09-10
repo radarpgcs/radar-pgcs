@@ -1,0 +1,54 @@
+<div id="search" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <%= image_tag 'magnifier.png' %>
+    </div>
+
+    <div class="col-sm-8">
+      <h4><%= t '.search.title' %></h4>
+      <br/>
+
+      <%= form_tag gfe_tables_path, method: :get do %>
+      <div class="row">
+        <div class="col-sm-3">
+          <b><label for="year"><%= t '.search.year' %></label></b>
+        </div>
+        <div class="col-sm-5">
+          <%= select_tag :year, years_for_selection %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <b><label for="employment"><%= t '.search.employment' %></label></b>
+        </div>
+        <div class="col-sm-5">
+          <%= select_tag :employment, employments_for_selection %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5">
+          <input type="submit" value="<%= t '.search.find' %>" class="btn btn-primary"/>
+          <input type="reset" value="<%= t '.search.erase' %>" class="btn btn-primary"/>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="definition" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8 text-justify">
+      <h2><%= t '.gfe.title' %></h2>
+      <h4><%= t '.gfe.subtitle' %></h4>
+      <%= t '.gfe.definition' %>
+    </div>
+
+    <div class="col-sm-2">
+      <%= image_tag 'gfe-badge.png' %>
+    </div>
+  </div>
+</div>

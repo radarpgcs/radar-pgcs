@@ -1,0 +1,26 @@
+---
+pt-BR:
+  gfe_tables:
+    index:
+      menu:
+        search: Consulta
+        gfe: GFE
+      search:
+        title: Consultar Tabela GFE
+        year: Ano
+        employment: Cargo
+        find: Consultar
+        erase: Apagar
+      gfe:
+        title: Tabela GFE
+        subtitle: Índice de Gratificações de Função Específica
+        definition: 'Aos ocupantes de cada cargo integrante do Plano de Gestão de Carreiras do Serpro - PGCS são atribuídas gratificações.
+Além disto, os empregados que desempenham atividades que extrapolam suas demandas cotidianas ou que estão envolvidos em projetos
+estratégicos recebem uma gratificação adicional: a Gratificação de Função Específica (GFE).
+Ela é distribuída por tempo determinado e não é incorporada ao salário. As chefias imediatas devem identificar,
+ao designar um(a) empregado(a) para receber a GFE, os seguintes itens:
+o impacto no trabalho; a complexidade do trabalho; e a abrangência dos conhecimentos.'
+    employments:
+      ANALISTA: Analista
+      TECNICO: Técnico
+      AUXILIAR: Auxiliar
