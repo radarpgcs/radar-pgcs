@@ -11,7 +11,11 @@ class PromotionsHelperTest < ActionView::TestCase
 
     years = (first..last).map { |year| year }
     for i in 0..(years.size - 1)
-      assert options[i].match(/<option value="#{years[i]}">#{years[i]}<\/option>/)
+      puts options[i]
+      puts first
+      puts last
+      assert_equal options[i], "<option value=#{years[i]}>#{years[i]}<\/option>"
+      #assert options[i].match(/<option value="#{years[i]}">#{years[i]}<\/option>/)
     end
   end
 end

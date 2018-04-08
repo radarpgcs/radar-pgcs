@@ -24,7 +24,7 @@ gem 'recaptcha', '~> 4.1.0', require: "recaptcha/rails"
 # Paginator for Ruby web applications
 gem 'kaminari', '~> 0.17.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Integrate Twitter Bootstrap and Rails
 gem 'bootstrap', '~> 4.0.0.alpha6'

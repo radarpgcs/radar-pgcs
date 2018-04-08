@@ -112,7 +112,7 @@ class PaymentTest < ActiveSupport::TestCase
 
     errors = payment.errors.messages
     assert_equal 1, errors[:year].size
-    assert_equal 'deve ser menor ou igual a 2017', errors[:year].first
+    assert_equal "deve ser menor ou igual a #{Time.now.year}", errors[:year].first
   end
 
   test 'should validate month presence' do
